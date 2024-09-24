@@ -5,9 +5,9 @@ mkdir qub
 cd qub
 mkdir qli
 wget https://dl.qubic.li/downloads/qli-Client-2.2.1-Linux-x64.tar.gz
-wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer-3.0.4.tar.gz
+wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer-3.0.6.tar.gz
 tar -C qli -xf qli-Client-2.2.1-Linux-x64.tar.gz
-tar -xf aleominer-3.0.4.tar.gz aleominer/aleominer
+tar -xf aleominer-3.0.6.tar.gz aleominer/aleominer
 cp ./aleominer/aleominer ./qli/aleominer
 cd qli
 rm appsettings.json
