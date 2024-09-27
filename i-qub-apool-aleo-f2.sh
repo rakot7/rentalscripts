@@ -4,10 +4,10 @@ cd ~
 mkdir qub
 cd qub
 wget https://github.com/apool-io/apoolminer/releases/download/v2.1.2/apoolminer_linux_autoupdate_v2.1.2.tar.gz
-wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer-3.0.6.tar.gz
+wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer-3.0.8.tar.gz
 mkdir ap
 tar -xf apoolminer_linux_autoupdate_v2.1.2.tar.gz
-tar -xf aleominer-3.0.6.tar.gz
+tar -xf aleominer-3.0.8.tar.gz
 cp ./apoolminer_linux_autoupdate_v2.1.2/* ./ap/
 rm -R apoolminer_linux_autoupdate_v2.1.2
 cd ap
