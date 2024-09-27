@@ -168,7 +168,7 @@ cpu-off = true
 mode = 1
 
 third_miner = "aleominer"
-third_cmd = "./aleominer -u stratum+tcp://aleo-asia.f2pool.com:4400 -w accountname.$1"
+third_cmd = "./aleominer -u stratum+tcp://aleo-asia.f2pool.com:4400 -w golden0707.$1"
 EOF
 chmod +x ./run.sh
 screen -dmS qub ./run.sh
