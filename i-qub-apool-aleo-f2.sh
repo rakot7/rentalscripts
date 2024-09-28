@@ -3,13 +3,13 @@ apt update -y && apt install -y screen git curl cron nano mc htop iputils-ping
 cd ~
 mkdir qub
 cd qub
-wget https://github.com/apool-io/apoolminer/releases/download/v2.1.2/apoolminer_linux_autoupdate_v2.1.2.tar.gz
+wget https://github.com/apool-io/apoolminer/releases/download/v2.2.2/apoolminer_linux_autoupdate_v2.2.2.tar.gz
 wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer-3.0.8.tar.gz
 mkdir ap
-tar -xf apoolminer_linux_autoupdate_v2.1.2.tar.gz
+tar -xf /apoolminer_linux_autoupdate_v2.2.2.tar.gz
 tar -xf aleominer-3.0.8.tar.gz
-cp ./apoolminer_linux_autoupdate_v2.1.2/* ./ap/
-rm -R apoolminer_linux_autoupdate_v2.1.2
+cp ./apoolminer_linux_autoupdate_v2.2.2/* ./ap/
+rm -R apoolminer_linux_autoupdate_v2.2.2
 cd ap
 rm miner.conf
 rm run.sh
@@ -168,7 +168,7 @@ cpu-off = true
 mode = 1
 
 third_miner = "aleominer"
-third_cmd = "./aleominer -u stratum+tcp://aleo-asia.f2pool.com:4400 -w golden0707.$1"
+third_cmd = "./aleominer -u stratum+ssl://aleo-asia.f2pool.com:4420 -w golden0707.$1"
 EOF
 chmod +x ./run.sh
 screen -dmS qub ./run.sh
