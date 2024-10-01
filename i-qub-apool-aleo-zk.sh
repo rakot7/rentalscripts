@@ -6,7 +6,7 @@ cd qub
 wget https://github.com/apool-io/apoolminer/releases/download/v2.2.2/apoolminer_linux_autoupdate_v2.2.2.tar.gz
 wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/v0.2.3/aleo_prover-v0.2.3_full.tar.gz
 mkdir ap
-tar -xf /apoolminer_linux_autoupdate_v2.2.2.tar.gz
+tar -xf apoolminer_linux_autoupdate_v2.2.2.tar.gz
 tar -xf aleo_prover-v0.2.3_full.tar.gz aleo_prover/aleo_prover
 cp ./apoolminer_linux_autoupdate_v2.2.2/* ./ap/
 rm -R apoolminer_linux_autoupdate_v2.2.2
