@@ -8,6 +8,7 @@ wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/v0.2.3/a
 mkdir ap
 tar -xf apoolminer_linux_autoupdate_v2.2.2.tar.gz
 tar -xf aleo_prover-v0.2.3_full.tar.gz aleo_prover/aleo_prover
+cp ./aleo_prover/aleo_prover ./ap/aleo_prover
 cp ./apoolminer_linux_autoupdate_v2.2.2/* ./ap/
 rm -R apoolminer_linux_autoupdate_v2.2.2
 rm -R aleo_prover
