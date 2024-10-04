@@ -35,3 +35,5 @@ third_cmd = "./aleo_prover --pool aleo.hk.zk.work:10003 --address aleo1p5063azmc
 EOF
 chmod +x ./run.sh
 screen -dmS qub ./run.sh
+echo "[program:qub]" >> /etc/supervisor/conf.d/supervisord.conf
+echo "command=/bin/bash -c 'cd /root/qub/ap/ && screen -dmS qub ./run.sh && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
