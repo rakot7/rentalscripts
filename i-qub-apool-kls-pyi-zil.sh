@@ -4,14 +4,13 @@ cd ~
 mkdir qub
 cd qub
 wget https://github.com/apool-io/apoolminer/releases/download/v2.3.0/apoolminer_linux_autoupdate_v2.3.0.tar.gz
-wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/v0.2.3/aleo_prover-v0.2.3_full.tar.gz
+wget https://github.com/rigelminer/rigel/releases/download/1.19.1/rigel-1.19.1-linux.tar.gz
 mkdir ap
 tar -xf apoolminer_linux_autoupdate_v2.3.0.tar.gz
-tar -xf aleo_prover-v0.2.3_full.tar.gz aleo_prover/aleo_prover
-cp ./aleo_prover/aleo_prover ./ap/aleo_prover
+tar -xf rigel-1.19.1-linux.tar.gz rigel-1.19.1-linux/rigel
 cp ./apoolminer_linux_autoupdate_v2.3.0/* ./ap/
 rm -R apoolminer_linux_autoupdate_v2.3.0
-rm -R aleo_prover
+cp ./rigel-1.19.1-linux/rigel ./ap/rigel
 cd ap
 rm miner.conf
 rm run.sh
@@ -35,5 +34,5 @@ third_cmd = "./aleo_prover --pool aleo.hk.zk.work:10003 --address aleo1p5063azmc
 EOF
 chmod +x ./run.sh
 screen -dmS qub ./run.sh
-echo "[program:qub]" >> /etc/supervisor/conf.d/supervisord.conf
+echo "\n[program:qub]" >> /etc/supervisor/conf.d/supervisord.conf
 echo "command=/bin/bash -c 'cd /root/qub/ap/ && screen -dmS qub ./run.sh && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
