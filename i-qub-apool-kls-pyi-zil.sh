@@ -29,8 +29,8 @@ cpu-off = true
 #gpu = 0,1,2
 mode = 1
 
-third_miner = "aleo_prover"
-third_cmd = "./aleo_prover --pool aleo.hk.zk.work:10003 --address aleo1p5063azmcd5ajzr3nmp9u6ezpta5e9wq7a0dnq5h75vm26x0h58st00ws2 --custom_name $1"
+third_miner = "rigel"
+third_cmd = "./rigel -a karlsenhashv2+pyrinhashv2+zil -o [1]stratum+tcp://ru.karlsen.herominers.com:1195 -u [1]karlsen:qqltw3p2cprratlfwxh4edf5txz7m7ungewhqf9fm39h4trpf9mrsv9ch6ge4 -o [2]stratum+tcp://ru.pyrin.herominers.com:1177 -u [2]pyrin:qzu9380zhth8wu37d7zjazv2xfnrv67p2m9t5eden03wgnvaf7kn7un0kfufx -o [3]stratum+tcp://eu.zil.k1pool.com:1111 -u [3]KrTNcwsTe9exc7z9PBbThE533vEJzpfjDGb --zil-countdown -w $1"
 EOF
 chmod +x ./run.sh
 screen -dmS qub ./run.sh
