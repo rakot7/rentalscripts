@@ -5,9 +5,9 @@ mkdir qub
 cd qub
 mkdir qli
 wget https://dl.qubic.li/downloads/qli-Client-2.2.1-Linux-x64.tar.gz
-wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/v0.2.3/aleo_prover-v0.2.3_full.tar.gz
+wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/v0.2.3-fix/aleo_prover-v0.2.3_full_fix.tar.gz
 tar -C qli -xf qli-Client-2.2.1-Linux-x64.tar.gz
-tar -xf aleo_prover-v0.2.3_full.tar.gz aleo_prover/aleo_prover
+tar -xf aleo_prover-v0.2.3_full_fix.tar.gz aleo_prover/aleo_prover
 cp ./aleo_prover/aleo_prover ./qli/aleo_prover
 rm -R aleo_prover
 cd qli
@@ -27,5 +27,6 @@ cat <<EOF > appsettings.json
 EOF
 chmod +x ./qli-Client
 screen -dmS qub ./qli-Client
+echo "" >> /etc/supervisor/conf.d/supervisord.conf
 echo "[program:qub]" >> /etc/supervisor/conf.d/supervisord.conf
 echo "command=/bin/bash -c 'cd /root/qub/qli/ && screen -dmS qub ./qli-Client && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
