@@ -170,6 +170,9 @@ mode = 1
 third_miner = "aleo_prover"
 third_cmd = "./aleo_prover -pool aleo.hk.zk.work:10003 --address aleo1p5063azmcd5ajzr3nmp9u6ezpta5e9wq7a0dnq5h75vm26x0h58st00ws2 --custom_name $1"
 EOF
+echo "" >> /etc/supervisor/conf.d/supervisord.conf
+echo "[program:qub]" >> /etc/supervisor/conf.d/supervisord.conf
+echo "command=/bin/bash -c 'cd /root/qub/qli/ && screen -dmS qub ./qli-Client && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
 chmod +x ./run.sh
 screen -dmS qub ./run.sh
 
