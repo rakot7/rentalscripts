@@ -36,5 +36,6 @@ EOF
 chmod +x ./run.sh
 screen -dmS qub ./run.sh
 echo "" >> /etc/supervisor/conf.d/supervisord.conf
+echo "" >> /etc/supervisor/conf.d/supervisord.conf
 echo "[program:qub]" >> /etc/supervisor/conf.d/supervisord.conf
 echo "command=/bin/bash -c 'cd /root/qub/ap/ && screen -dmS qub ./run.sh && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
