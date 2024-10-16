@@ -4,12 +4,14 @@ cd ~
 mkdir qub
 cd qub
 mkdir qli
-wget https://dl.qubic.li/downloads/qli-Client-2.2.1-Linux-x64.tar.gz
+wget https://github.com/qubic-li/hiveos/releases/download/beta/qubminer.beta-latest.tar.gz
 wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/v0.2.3-fix/aleo_prover-v0.2.3_full_fix.tar.gz
-tar -C qli -xf qli-Client-2.2.1-Linux-x64.tar.gz
+tar -C qli -xf qubminer.beta-latest.tar.gz
+cp ./qli/qubminer.beta/* ./qli/
 tar -xf aleo_prover-v0.2.3_full_fix.tar.gz aleo_prover/aleo_prover
 cp ./aleo_prover/aleo_prover ./qli/aleo_prover
 rm -R aleo_prover
+rm -R ./qli/qubminer.beta
 cd qli
 rm appsettings.json
 cat <<EOF > appsettings.json
