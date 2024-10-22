@@ -3,15 +3,15 @@ apt update -y && apt install -y screen git curl cron nano mc htop iputils-ping
 cd ~
 mkdir qub
 cd qub
-wget https://github.com/apool-io/apoolminer/releases/download/v2.5.0/apoolminer_linux_autoupdate_v2.5.0.tar.gz
+wget https://github.com/apool-io/apoolminer/releases/download/v2.5.1/apoolminer_linux_dualaleo_v2.5.1.tar.gz
 wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/v0.2.3-fix/aleo_prover-v0.2.3_full_fix.tar.gz
 mkdir ap
 rm ./ap/*
-tar -xf apoolminer_linux_autoupdate_v2.5.0.tar.gz
+tar -xf apoolminer_linux_dualaleo_v2.5.1.tar.gz
 tar -xf aleo_prover-v0.2.3_full_fix.tar.gz aleo_prover/aleo_prover
 cp ./aleo_prover/aleo_prover ./ap/aleo_prover
-cp ./apoolminer_linux_autoupdate_v2.5.0/* ./ap/
-rm -R apoolminer_linux_autoupdate_v2.5.0
+cp ./apoolminer_linux_dualaleo_v2.5.1/* ./ap/
+rm -R apoolminer_linux_dualaleo_v2.5.1
 rm -R aleo_prover
 cd ap
 rm miner.conf
