@@ -24,7 +24,7 @@ cat <<EOF > appsettings.json
       "cpuVersion": "",
       "cpuThreads": 0
     },
-    "isPps": true,
+    "isPps": false,
     "useLiveConnection": true,
     "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY5MTJkOTEwLWRiNDAtNDZmMS04MmI2LTY4OTc5MDQ3ODJmZCIsIk1pbmluZyI6IiIsIm5iZiI6MTcyNzU2MTYxMSwiZXhwIjoxNzU5MDk3NjExLCJpYXQiOjE3Mjc1NjE2MTEsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.GtVw1cTrW7_D7EDOyebbtuHo0Xdpy93ZP0S_6aSswVN0BmSiwHCNA9-s2qSottV_RWpAysz_yrHks5iWcuN3yOsbvpMZwWA44HelEdV7dtSUmbaO6tsZtVVmrNL_MCDcFaYVlVjp4nLccJtmUnYfidYsjZog0apFj4t-Ub7HdB313iCoohNRBiFmoGKQg6pSp4xQtTKfI9i6oGJXEVhZyYV_KHCCA2mBL6e5-KhtyuSh6-t0GRrhy_wro5FcdkAZq1si6O_-R86SedVE3O1u64gQPRJbIzPzgimY9yZ56bZYh5StCDJMENU79KkRT3ErL_PsIJ612Bou5HIQg-KHbA",
     "idleSettings": {
