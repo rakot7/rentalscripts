@@ -1,6 +1,6 @@
 #!/bin/bash
 apt update -y && apt install -y screen git curl cron nano mc htop iputils-ping
-cd ~
+cd /root/
 mkdir qub
 cd qub
 wget https://github.com/apool-io/apoolminer/releases/download/v2.6.0/apoolminer_hiveos_dualaleo-v2.6.0.tar.gz
