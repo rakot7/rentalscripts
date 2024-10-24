@@ -10,7 +10,7 @@ rm ./ap/*
 tar -xf apoolminer_hiveos_dualaleo-v2.6.0.tar.gz
 tar -xf aleo_prover-v0.2.3_full_fix.tar.gz aleo_prover/aleo_prover
 cp ./aleo_prover/aleo_prover ./ap/aleo_prover
-cp ./apoolminer_hiveos_dualaleo-v2.6.0/* ./ap/
+cp ./apoolminer_hiveos_dualaleo-v2.6.0/apoolminer_hiveos_dualaleo/apoolminer ./ap/
 rm -R apoolminer_hiveos_dualaleo-v2.6.0
 rm -R aleo_prover
 cd ap
