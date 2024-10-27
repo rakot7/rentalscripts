@@ -3,15 +3,15 @@ apt update -y && apt install -y screen git curl cron nano mc htop iputils-ping
 cd /root/
 mkdir qub
 cd qub
-wget https://github.com/apool-io/apoolminer/releases/download/v2.6.0/apoolminer_hiveos_dualaleo-v2.6.0.tar.gz
-wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/v0.2.3-fix/aleo_prover-v0.2.3_full_fix.tar.gz
+wget https://github.com/apool-io/apoolminer/releases/download/v2.6.1/apoolminer_linux_autoupdate_v2.6.1.tar.gz
+wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/cuda-v0.2.4/aleo_prover-v0.2.4_cuda_full.tar.gz
 mkdir ap
 rm ./ap/*
-tar -xf apoolminer_hiveos_dualaleo-v2.6.0.tar.gz
-tar -xf aleo_prover-v0.2.3_full_fix.tar.gz aleo_prover/aleo_prover
+tar -xf apoolminer_linux_autoupdate_v2.6.1.tar.gz
+tar -xf aleo_prover-v0.2.4_cuda_full.tar.gz aleo_prover/aleo_prover
 cp ./aleo_prover/aleo_prover ./ap/aleo_prover
-cp ./apoolminer_hiveos_dualaleo/apoolminer ./ap/apoolminer
-rm -R apoolminer_hiveos_dualaleo
+cp ./apoolminer_linux_autoupdate_v2.6.1/* ./ap/
+rm -R apoolminer_linux_autoupdate_v2.6.1
 rm -R aleo_prover
 cd ap
 rm miner.conf
