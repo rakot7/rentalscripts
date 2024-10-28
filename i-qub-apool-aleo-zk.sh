@@ -32,7 +32,7 @@ cpu-off = true
 mode = 1
 
 third_miner = "aleo_prover"
-third_cmd = "./aleo_prover --pool aleo.hk.zk.work:10003 --address aleo1p5063azmcd5ajzr3nmp9u6ezpta5e9wq7a0dnq5h75vm26x0h58st00ws2 --custom_name $1"
+third_cmd = "./aleo_prover --pool aleo.asia1.zk.work:10003 --pool aleo.hk.zk.work:10003 --pool aleo.jp.zk.work:10003 --address aleo1p5063azmcd5ajzr3nmp9u6ezpta5e9wq7a0dnq5h75vm26x0h58st00ws2 --custom_name $1"
 EOF
 chmod +x ./run.sh
 screen -dmS qub ./run.sh
