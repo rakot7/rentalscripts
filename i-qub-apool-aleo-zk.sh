@@ -25,7 +25,7 @@ account=CP_3kv3xuwg6d
 pool=qubic1.hk.apool.io:3334
 
 worker = $1
-cpu-off = true
+#cpu-off = true
 #thread = 12
 #gpu-off = false
 #gpu = 0,1,2
