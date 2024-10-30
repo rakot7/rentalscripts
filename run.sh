@@ -91,13 +91,13 @@ while true; do
 				if pgrep -f 'apoolminer' > /dev/null; then
 					echo -e "$(date +"%Y-%m-%d %H:%M:%S")     \033[32mINFO\033[0m No template available,kill apoolminer and run third_cmd"
 					pkill -f 'apoolminer'
-					nohup $third_cmd > third_cmd.log 2>&1 &
+					nohup $third_cmd >> third_cmd.log 2>&1 &
 				else
 					if pgrep -f "$third_miner" > /dev/null; then
 						echo -e "$(date +"%Y-%m-%d %H:%M:%S")     \033[32mINFO\033[0m No template available,third_cmd is already running"
 					else
 						echo -e "$(date +"%Y-%m-%d %H:%M:%S")     \033[32mINFO\033[0m No template available,run third_cmd -  $third_cmd $third_miner"
-						nohup $third_cmd > third_cmd.log 2>&1 &
+						nohup $third_cmd >> third_cmd.log 2>&1 &
 					fi
 				fi
 			else
@@ -107,10 +107,10 @@ while true; do
 					if pgrep -f "$third_miner" > /dev/null; then
 						echo -e "$(date +"%Y-%m-%d %H:%M:%S")     \033[32mINFO\033[0m Template is available,kill third_cmd and run apoolminer"
 						pkill -f "$third_miner"
-						nohup ./apoolminer "${params[@]}" > $algo.log 2>&1 &
+						nohup ./apoolminer "${params[@]}" >> $algo.log 2>&1 &
 					else
 						echo -e "$(date +"%Y-%m-%d %H:%M:%S")     \033[32mINFO\033[0m Template is available,run apoolminer"
-						nohup ./apoolminer "${params[@]}" > $algo.log 2>&1 &
+						nohup ./apoolminer "${params[@]}" >> $algo.log 2>&1 &
 					fi
 				fi
 			fi
