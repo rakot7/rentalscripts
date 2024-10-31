@@ -4,16 +4,16 @@
 ## Begin of user-editable part ##
 #################################
 
-POOL=ru.e4pool.com:15108
-WALLET=0xE84079aF0d1b255a6F3392C12e247259858cD4d5.$1
+pool=ru.e4pool.com:15108
+wallet=0xE84079aF0d1b255a6F3392C12e247259858cD4d5.$1
 
 #################################
 ##  End of user-editable part  ##
 #################################
 
 
-./lolMiner --algo ETHASH --pool $POOL --user $WALLET $@
+./lolMiner --algo ETHASH --pool $pool --user wallet $@
 while [ $? -eq 42 ]; do
     sleep 10s
-    ./lolMiner --algo ETHASH --pool $POOL --user $WALLET $@
+    ./lolMiner --algo ETHASH --pool $pool --user $wallet $@
 done
