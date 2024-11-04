@@ -5,10 +5,10 @@ mkdir qub
 cd qub
 mkdir qli
 wget https://github.com/qubic-li/hiveos/releases/download/beta/qubminer.beta-latest.tar.gz
-wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/v0.2.3-fix/aleo_prover-v0.2.3_full_fix.tar.gz
+wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/cuda-v0.2.4/aleo_prover-v0.2.4_cuda_full.tar.gz
 tar -C qli -xf qubminer.beta-latest.tar.gz
 cp ./qli/qubminer.beta/* ./qli/
-tar -xf aleo_prover-v0.2.3_full_fix.tar.gz aleo_prover/aleo_prover
+tar -xf aleo_prover-v0.2.4_cuda_full.tar.gz aleo_prover/aleo_prover
 cp ./aleo_prover/aleo_prover ./qli/aleo_prover
 rm -R aleo_prover
 rm -R ./qli/qubminer.beta
@@ -20,10 +20,10 @@ cat <<EOF > appsettings.json
     "baseUrl": "https://wps.qubic.li",
     "alias": "$1",
     "trainer": {
-      "cpu": false,
+      "cpu": true,
       "gpu": true,
       "gpuVersion": "CUDA12",
-      "cpuVersion": "",
+      "cpuVersion": "avx512",
       "cpuThreads": 0
     },
     "isPps": false,
