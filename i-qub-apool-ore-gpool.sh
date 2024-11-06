@@ -22,7 +22,7 @@ if pgrep -f "apooliner" > /dev/null; then
         echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  apoolminer is running , doing nothing"
 else
         echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  No apoollminer , running apoolminer"
-        ./apoolminer --account CP_3kv3xuwg6d --pool qubic1.hk.apool.io:3334 --worker $1
+        ./apoolminer --account CP_3kv3xuwg6d --pool qubic1.hk.apool.io:3334 --cpu-off --worker $1
 fi
 done
 EOF
