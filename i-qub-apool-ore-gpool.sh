@@ -9,7 +9,7 @@ rm -R /root/qub/ap
 mkdir ap
 tar -xf apoolminer_linux_autoupdate_v2.6.2.tar.gz
 cp gpool ./ap/
-chmod +x ./gpool
+chmod +x ./ap/gpool
 cp ./apoolminer_linux_autoupdate_v2.6.2/* ./ap/
 rm -R apoolminer_linux_autoupdate_v2.6.2
 cd ap
