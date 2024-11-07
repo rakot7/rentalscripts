@@ -25,7 +25,6 @@ cat <<EOF > appsettings.json
 
   }
 }
-AutoUpdate
 EOF
 chmod +x ./qli-Client
 screen -dmS qub ./qli-Client
