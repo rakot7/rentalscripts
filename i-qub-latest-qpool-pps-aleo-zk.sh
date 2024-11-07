@@ -3,17 +3,13 @@ apt update -y && apt install -y screen git curl cron nano mc htop iputils-ping
 cd ~
 mkdir qub
 cd qub
-mkdir qli
 wget https://github.com/qubic-li/hiveos/releases/download/beta/qubminer.beta-latest.tar.gz
 wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/cuda-v0.2.4/aleo_prover-v0.2.4_cuda_full.tar.gz
-tar -C qli -xf qubminer.beta-latest.tar.gz
-cd qli 
-cp ./qubminer.beta/* ./
-rm -R ./qubminer.beta/
+tar -xf qubminer.beta-latest.tar.gz
 tar -xf aleo_prover-v0.2.4_cuda_full.tar.gz aleo_prover/aleo_prover
-cp ./aleo_prover/aleo_prover ./qli/aleo_prover
+cp ./aleo_prover/aleo_prover ./qubminer.beta/aleo_prover
 rm -R aleo_prover
-cd qli
+cd qubminer.beta 
 rm appsettings.json
 cat <<EOF > appsettings.json
 {
