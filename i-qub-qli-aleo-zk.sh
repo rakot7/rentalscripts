@@ -20,6 +20,7 @@ cat <<EOF > appsettings.json
     "payoutId": null,
     "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY5MTJkOTEwLWRiNDAtNDZmMS04MmI2LTY4OTc5MDQ3ODJmZCIsIk1pbmluZyI6IiIsIm5iZiI6MTczMTIyNjAzNiwiZXhwIjoxNzYyNzYyMDM2LCJpYXQiOjE3MzEyMjYwMzYsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.RUhyNysvMNGd3agNfBtN5iVVmvbA2Cx9nEKv6WK5rNJFeW9WYAkxTbvN2RXN0F8bMmX7k6HC515UXyge9XbrrGvt-d0oPhGlZh7HHBKPCSAHmoK-LtTkJNCLYSV6vIhOUvH3xEthWg6Y313Ljx24qDGzmQF_DwF-77ETkbYYoWvDRbyjS8Zg3dEReEM7_S6lx7_SJqnYhJljDZ7CyVzHoPc_YRCMffdUbqlJH0JOwcanK5h8ibcIo0_pJ2Ep2frG36aVNmgFuiCQW-Oa_RyiZcEdTxsxbQc-tgucADxmpQK-_eviXRVukVCwstjfSroPsNfhZKM2fvPTZszqCQcrgA",
     "alias": "$1",
+    "Pps":true,
     "trainer": {"gpu": true,"gpuVersion": "CUDA12","cpu": false},
     "idleSettings": {"command": "./aleo_prover","arguments": "--pool aleo.asia1.zk.work:10003 --pool aleo.hk.zk.work:10003 --pool aleo.jp.zk.work:10003 --address aleo1p5063azmcd5ajzr3nmp9u6ezpta5e9wq7a0dnq5h75vm26x0h58st00ws2 --custom_name $1"}
   }
