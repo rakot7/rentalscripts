@@ -1,5 +1,7 @@
 #!/bin/bash
 cd /root/qub/
+rm apoolminer_linux_autoupdate_v2.6*
+rm leo_prover-v0.2.5.*
 wget https://github.com/apool-io/apoolminer/releases/download/v2.6.6/apoolminer_linux_autoupdate_v2.6.6.tar.gz
 wget https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/cuda-v0.2.5/aleo_prover-v0.2.5_cuda_full.tar.gz
 tar -xf apoolminer_linux_autoupdate_v2.6.6.tar.gz
