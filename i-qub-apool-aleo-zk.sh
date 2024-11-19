@@ -3,7 +3,7 @@ apt update -y && apt install -y screen git curl cron nano mc htop iputils-ping
 cd /root/
 mkdir qub
 cd qub
-wget https://github.com/apool-io/apoolminer/releases/download/v2.6.6/apoolminer_linux_autoupdate_v2.6.6.tar.gz
+wget --continue --tries=0 https://github.com/apool-io/apoolminer/releases/download/v2.6.6/apoolminer_linux_autoupdate_v2.6.6.tar.gz
 wget --continue --tries=0 https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/cuda-v0.2.5/aleo_prover-v0.2.5_cuda_full.tar.gz
 mkdir ap
 rm ./ap/*
