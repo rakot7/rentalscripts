@@ -7,7 +7,7 @@ mkdir qli
 wget https://dl.qubic.li/downloads/qli-Client-2.2.1-Linux-x64.tar.gz
 wget --continue --tries=0 https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/cuda-v0.2.5-hotfix/aleo_prover-v0.2.5_cuda_full_hotfix.tar.gz
 tar -C qli -xf qli-Client-2.2.1-Linux-x64.tar.gz
-tar -xf aleo_prover-v0.2.5_cuda_full_hotfix aleo_prover/aleo_prover
+tar -xf aleo_prover-v0.2.5_cuda_full_hotfix.tar.gz aleo_prover/aleo_prover
 cp ./aleo_prover/aleo_prover ./qli/aleo_prover
 rm -R aleo_prover
 cd qli
