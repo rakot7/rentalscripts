@@ -2,7 +2,7 @@
 apt update -y && apt install -y screen git curl cron nano mc htop iputils-ping
 echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" >> /etc/apt/sources.list
 apt update
-apt install libc6
+apt install -y libc6
 apt install -y g++-11
 cd ~
 mkdir qub
