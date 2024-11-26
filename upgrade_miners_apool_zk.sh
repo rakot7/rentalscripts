@@ -8,6 +8,7 @@ tar -xf apoolminer_linux_autoupdate_v2.6.7.tar.gz
 tar -xf aleo_prover-v0.2.5_cuda_full_hotfix.tar.gz aleo_prover/aleo_prover
 rm ./ap/aleo_prover
 rm ./ap/apoolminer
+mkdir ap
 pkill -f 'run.sh'
 pkill -f 'apoolminer'
 pkill -f 'aleo_prover'
