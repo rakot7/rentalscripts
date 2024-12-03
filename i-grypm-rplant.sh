@@ -3,9 +3,8 @@ apt update -y && apt install -y screen git curl cron nano mc htop iputils-ping
 cd ~
 mkdir grypm
 cd grypm
-wget --continue --tries=0 https://github.com/doktor83/SRBMiner-Multi/releases/download/2.7.0/SRBMiner-Multi-2-7-0-Linux.tar.gz
-tar -xf SRBMiner-Multi-2-7-0-Linux.tar.gz
-cd SRBMiner-Multi-2-7-0
+wget --continue --tries=0 https://github.com/andru-kun/wildrig-multi/releases/download/0.41.5/wildrig-multi-linux-0.41.5.tar.xz
+tar -xf wildrig-multi-linux-0.41.5.tar.xz
 cat <<EOF > grypm.sh
 
 #!/bin/bash
