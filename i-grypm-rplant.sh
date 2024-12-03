@@ -7,13 +7,14 @@ wget --continue --tries=0 https://github.com/doktor83/SRBMiner-Multi/releases/do
 tar -xf SRBMiner-Multi-2-7-0-Linux.tar.gz
 cd SRBMiner-Multi-2-7-0
 cat <<EOF > grypm.sh
+
 #!/bin/bash
 while true; do
-if pgrep -f "SRBMiner-MULTI" > /dev/null; then
-        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  SRBMiner-MULTI is running , doing nothing"
+if pgrep -f "wildrig-multi" > /dev/null; then
+        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  wildrig-multi is running , doing nothing"
 else
-        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  No SRBMiner-MULTI , running SRBMiner-MULTI"
-        ./SRBMiner-MULTI --algorithm memehash --pool stratum-eu.rplant.xyz:17074 --tls true --wallet UR4ap5nis3ybgxJdJ6kKf5ZttXedXLcuAS.$1 --keepalive true
+        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  No wildrig-multi , running wildrig-multi"
+        ./wildrig-multi -a memehash  -o stratum+tcps://stratum-eu.rplant.xyz:17074 -u UR4ap5nis3ybgxJdJ6kKf5ZttXedXLcuAS.$1
 fi
 done
 EOF
