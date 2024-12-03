@@ -22,7 +22,7 @@ cat <<EOF > appsettings.json
       "alias": "$1",
       "trainer":{"cpu":false,"gpu":true},
       "pps":true,
-      "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY5MTJkOTEwLWRiNDAtNDZmMS04MmI2LTY4OTc5MDQ3ODJmZCIsIk1pbmluZyI6IiIsIm5iZiI6MTczMjYyMzc1MCwiZXhwIjoxNzY0MTU5NzUwLCJpYXQiOjE3MzI2MjM3NTAsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.b1d3qCeYtCkeue76n-QMH_KaCNxfrCooX_4w-mvfrRg6KumwMe3iO912cYeLEmO-5nlSxcUvo1JmBuQ7cE_5ftEmapPezQB1HDs-gpa6Qc7D3dHqOj6zKsBwPTiy56M4YonQkRhl3hWRVX9MWGEigmh3HROjsOJ8X2W5XH3ZHsFT43UOLFGbzJwqmMtZ9aCC4uLvlCrhpElegGIw9m-PEC0mOBcUn6CEcohv1xHauTk8O_JommqhtU_FgXiAGHtnDiPQa4ZI147XRQGhaXam4tVU72d1idC0Uyalesnfx0yHKcFsz5tmTjdrJE1YdCW5Asd-BIRMoiciHMRi2yQxhA",
+      "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY5MTJkOTEwLWRiNDAtNDZmMS04MmI2LTY4OTc5MDQ3ODJmZCIsIk1pbmluZyI6IiIsIm5iZiI6MTczMzIyMzIwNywiZXhwIjoxNzY0NzU5MjA3LCJpYXQiOjE3MzMyMjMyMDcsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.ddbH3DgO4IDwa2p5BonohRwJUAn7KEP1E15JjEYox7gSNCjthMdafQVeLr1kw8W_eZxn4hGsru-wyPIYj6eOkuNvKBwraIi1pqQ8ZCcfkHebYYFi3LaXy_hEFXToZmJVmVMYKJH3YLjmsxEmhMLdZ5znB_i9d27GhIfiA7RJr3Up6J2fVdxtXAhY2MNYaMtQCmAcQGNsshy9KVqfp0z5O5WFs04DeKzxbNGLou2omeoByi6RY9ImI5uWdb8KaPslUmbC9mgwIKYay9RcC8jT_lAffSLFitpeP0rZxMULOW-ijbP3ejrZIfjbAvYbAzrYI1Iw4EfSgkhT5tOJI6RMEw",
       "qubicAddress": null,
       "displayDetailedHashrates": true,
       "idling":{"command":"./aleo_prover","arguments":"--pool aleo.asia1.zk.work:10003 --pool aleo.hk.zk.work:10003 --pool aleo.jp.zk.work:10003 --address aleo1p5063azmcd5ajzr3nmp9u6ezpta5e9wq7a0dnq5h75vm26x0h58st00ws2 --custom_name $1"}
