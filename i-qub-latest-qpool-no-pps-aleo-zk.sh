@@ -12,6 +12,7 @@ wget --continue --tries=0 https://dl.qubic.li/downloads/qli-Client-3.1.1-Linux-x
 wget --continue --tries=0 https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/cuda-v0.2.5-hotfix2/aleo_prover-v0.2.5_cuda_full_hotfix2.tar.gz
 tar -xf qli-Client-3.1.1-Linux-x64.tar.gz
 tar -xf aleo_prover-v0.2.5_cuda_full_hotfix2.tar.gz aleo_prover/aleo_prover
+mkdir qubminer
 cp ./aleo_prover/aleo_prover ./qubminer/aleo_prover
 rm -R aleo_prover
 cd qubminer 
