@@ -20,15 +20,26 @@ rm appsettings.json
 cat <<EOF > appsettings.json
 {
   "ClientSettings": {
-      "poolAddress": "wss://wps.qubic.li/ws",
-      "alias": "$1",
-      "trainer":{"cpu":false,"gpu":true},
-      "pps":true,
-      "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY5MTJkOTEwLWRiNDAtNDZmMS04MmI2LTY4OTc5MDQ3ODJmZCIsIk1pbmluZyI6IiIsIm5iZiI6MTczMzMzMzU3MiwiZXhwIjoxNzY0ODY5NTcyLCJpYXQiOjE3MzMzMzM1NzIsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.joHk7ayIMhBQe4VI1j-Km4md3AjxrVi57H-DXMRnw4-Ju13YFO9wFdTVwa7TUgHvJNNl_T705mu8eS2_J8bk-DvIFMuRMSg0iSBdpbynL9ZRY1zEVSYUepO_xgWNJNqFTnKlVtgHMIOiyL1hxUfyN-Me-shJAptz3LJ5qWpcD_fUvNYDWA0xDd1CdRkevoX-JBaYO_7v4Jk4Bw8dj-LdGUTPGcgEbiyS01h7K9b4XGq0Uxcm1sI9t7RKvkeYt6ukIAYMagNyCRK_f7MZB3lxbzJmSm72_Mpr40YWMkodbDEydMFpC3gkPEnS4My8jQMGgVgI7gaxHoZLALr0Pkunng",
-      "qubicAddress": null,
-      "displayDetailedHashrates": true,
-      "idling":{"command":"./aleo_prover","arguments":"--pool aleo.asia1.zk.work:10003 --pool aleo.hk.zk.work:10003 --pool aleo.jp.zk.work:10003 --address aleo1p5063azmcd5ajzr3nmp9u6ezpta5e9wq7a0dnq5h75vm26x0h58st00ws2 --custom_name $1"}
-
+    "poolAddress": "wss://wps.qubic.li/ws",
+    "alias": "$1",
+    "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY5MTJkOTEwLWRiNDAtNDZmMS04MmI2LTY4OTc5MDQ3ODJmZCIsIk1pbmluZyI6IiIsIm5iZiI6MTczMzMzMzU3MiwiZXhwIjoxNzY0ODY5NTcyLCJpYXQiOjE3MzMzMzM1NzIsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.joHk7ayIMhBQe4VI1j-Km4md3AjxrVi57H-DXMRnw4-Ju13YFO9wFdTVwa7TUgHvJNNl_T705mu8eS2_J8bk-DvIFMuRMSg0iSBdpbynL9ZRY1zEVSYUepO_xgWNJNqFTnKlVtgHMIOiyL1hxUfyN-Me-shJAptz3LJ5qWpcD_fUvNYDWA0xDd1CdRkevoX-JBaYO_7v4Jk4Bw8dj-LdGUTPGcgEbiyS01h7K9b4XGq0Uxcm1sI9t7RKvkeYt6ukIAYMagNyCRK_f7MZB3lxbzJmSm72_Mpr40YWMkodbDEydMFpC3gkPEnS4My8jQMGgVgI7gaxHoZLALr0Pkunng",
+    "qubicAddress": null,
+    "displayDetailedHashrates": true,
+    "ISPPS": "false",
+    "trainer": {
+      "cpu": true,
+      "gpu": true,
+      "cpuThreads": 0
+    },
+    "Idling": {
+      "gpuOnly": true,
+      "command": "/root/aleo_prover/aleo_prover",
+      "arguments": "--pool aleo.asia1.zk.work:10003 --pool aleo.hk.zk.work:10003 --pool aleo.jp.zk.work:10003 --address aleo1p5063azmcd5ajzr3nmp9u6ezpta5e9wq7a0dnq5h75vm26x0h58st00ws2 --custom_name $1 ",
+      "preCommand": null,
+      "preCommandArguments": null,
+      "postCommand": null,
+      "postCommandArguments": null
+    }
   }
 }
 EOF
