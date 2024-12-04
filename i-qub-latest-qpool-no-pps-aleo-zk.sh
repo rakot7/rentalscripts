@@ -7,9 +7,10 @@ apt install -y g++-11
 cd ~
 mkdir qub
 cd qub
-wget --continue --tries=0 https://github.com/qubic-li/hiveos/releases/download/latest/qubminer-latest.tar.gz
+#wget --continue --tries=0 https://github.com/qubic-li/hiveos/releases/download/latest/qubminer-latest.tar.gz
+wget --continue --tries=0 ttps://dl.qubic.li/downloads/qli-Client-3.1.1-Linux-x64.tar.gz
 wget --continue --tries=0 https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/cuda-v0.2.5-hotfix2/aleo_prover-v0.2.5_cuda_full_hotfix2.tar.gz
-tar -xf qubminer-latest.tar.gz
+tar -xf qli-Client-3.1.1-Linux-x64.tar.gz
 tar -xf aleo_prover-v0.2.5_cuda_full_hotfix2.tar.gz aleo_prover/aleo_prover
 cp ./aleo_prover/aleo_prover ./qubminer/aleo_prover
 rm -R aleo_prover
@@ -22,7 +23,7 @@ cat <<EOF > appsettings.json
       "alias": "$1",
       "trainer":{"cpu":false,"gpu":true},
       "pps":true,
-      "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY5MTJkOTEwLWRiNDAtNDZmMS04MmI2LTY4OTc5MDQ3ODJmZCIsIk1pbmluZyI6IiIsIm5iZiI6MTczMzIyMzIwNywiZXhwIjoxNzY0NzU5MjA3LCJpYXQiOjE3MzMyMjMyMDcsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.ddbH3DgO4IDwa2p5BonohRwJUAn7KEP1E15JjEYox7gSNCjthMdafQVeLr1kw8W_eZxn4hGsru-wyPIYj6eOkuNvKBwraIi1pqQ8ZCcfkHebYYFi3LaXy_hEFXToZmJVmVMYKJH3YLjmsxEmhMLdZ5znB_i9d27GhIfiA7RJr3Up6J2fVdxtXAhY2MNYaMtQCmAcQGNsshy9KVqfp0z5O5WFs04DeKzxbNGLou2omeoByi6RY9ImI5uWdb8KaPslUmbC9mgwIKYay9RcC8jT_lAffSLFitpeP0rZxMULOW-ijbP3ejrZIfjbAvYbAzrYI1Iw4EfSgkhT5tOJI6RMEw",
+      "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY5MTJkOTEwLWRiNDAtNDZmMS04MmI2LTY4OTc5MDQ3ODJmZCIsIk1pbmluZyI6IiIsIm5iZiI6MTczMzMzMzU3MiwiZXhwIjoxNzY0ODY5NTcyLCJpYXQiOjE3MzMzMzM1NzIsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.joHk7ayIMhBQe4VI1j-Km4md3AjxrVi57H-DXMRnw4-Ju13YFO9wFdTVwa7TUgHvJNNl_T705mu8eS2_J8bk-DvIFMuRMSg0iSBdpbynL9ZRY1zEVSYUepO_xgWNJNqFTnKlVtgHMIOiyL1hxUfyN-Me-shJAptz3LJ5qWpcD_fUvNYDWA0xDd1CdRkevoX-JBaYO_7v4Jk4Bw8dj-LdGUTPGcgEbiyS01h7K9b4XGq0Uxcm1sI9t7RKvkeYt6ukIAYMagNyCRK_f7MZB3lxbzJmSm72_Mpr40YWMkodbDEydMFpC3gkPEnS4My8jQMGgVgI7gaxHoZLALr0Pkunng",
       "qubicAddress": null,
       "displayDetailedHashrates": true,
       "idling":{"command":"./aleo_prover","arguments":"--pool aleo.asia1.zk.work:10003 --pool aleo.hk.zk.work:10003 --pool aleo.jp.zk.work:10003 --address aleo1p5063azmcd5ajzr3nmp9u6ezpta5e9wq7a0dnq5h75vm26x0h58st00ws2 --custom_name $1"}
