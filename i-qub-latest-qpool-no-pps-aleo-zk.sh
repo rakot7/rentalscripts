@@ -8,7 +8,7 @@ cd ~
 mkdir qub
 cd qub
 #wget --continue --tries=0 https://github.com/qubic-li/hiveos/releases/download/latest/qubminer-latest.tar.gz
-wget --continue --tries=0 ttps://dl.qubic.li/downloads/qli-Client-3.1.1-Linux-x64.tar.gz
+wget --continue --tries=0 https://dl.qubic.li/downloads/qli-Client-3.1.1-Linux-x64.tar.gz
 wget --continue --tries=0 https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/cuda-v0.2.5-hotfix2/aleo_prover-v0.2.5_cuda_full_hotfix2.tar.gz
 tar -xf qli-Client-3.1.1-Linux-x64.tar.gz
 tar -xf aleo_prover-v0.2.5_cuda_full_hotfix2.tar.gz aleo_prover/aleo_prover
