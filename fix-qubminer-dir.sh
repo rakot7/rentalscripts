@@ -1,0 +1,1 @@
+sed -i "s/qli-Client/temp/g" /etc/supervisor/conf.d/supervisord.conf && sed -i "s/qli/qubminer/g" /etc/supervisor/conf.d/supervisord.conf && sed -i "s/temp/qli-Client/g" /etc/supervisor/conf.d/supervisord.conf
