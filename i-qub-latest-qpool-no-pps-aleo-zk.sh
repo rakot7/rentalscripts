@@ -47,4 +47,4 @@ chmod +x ./qli-Client
 screen -dmS qub ./qli-Client
 echo "" >> /etc/supervisor/conf.d/supervisord.conf
 echo "[program:qub]" >> /etc/supervisor/conf.d/supervisord.conf
-echo "command=/bin/bash -c 'cd /root/qub/qli/ && screen -dmS qub ./qli-Client && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
+echo "command=/bin/bash -c 'cd /root/qub/qubminer/ && screen -dmS qub ./qli-Client && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
