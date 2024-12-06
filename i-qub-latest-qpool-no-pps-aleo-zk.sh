@@ -25,11 +25,9 @@ cat <<EOF > appsettings.json
     "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY5MTJkOTEwLWRiNDAtNDZmMS04MmI2LTY4OTc5MDQ3ODJmZCIsIk1pbmluZyI6IiIsIm5iZiI6MTczMzMzMzU3MiwiZXhwIjoxNzY0ODY5NTcyLCJpYXQiOjE3MzMzMzM1NzIsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.joHk7ayIMhBQe4VI1j-Km4md3AjxrVi57H-DXMRnw4-Ju13YFO9wFdTVwa7TUgHvJNNl_T705mu8eS2_J8bk-DvIFMuRMSg0iSBdpbynL9ZRY1zEVSYUepO_xgWNJNqFTnKlVtgHMIOiyL1hxUfyN-Me-shJAptz3LJ5qWpcD_fUvNYDWA0xDd1CdRkevoX-JBaYO_7v4Jk4Bw8dj-LdGUTPGcgEbiyS01h7K9b4XGq0Uxcm1sI9t7RKvkeYt6ukIAYMagNyCRK_f7MZB3lxbzJmSm72_Mpr40YWMkodbDEydMFpC3gkPEnS4My8jQMGgVgI7gaxHoZLALr0Pkunng",
     "qubicAddress": null,
     "displayDetailedHashrates": true,
-    "ISPPS": "false",
     "trainer": {
       "cpu": false,
-      "gpu": true,
-      "cpuThreads": 0
+      "gpu": true
     },
     "Idling": {
       "gpuOnly": true,
