@@ -27,7 +27,7 @@ cat <<EOF > appsettings.json
     "displayDetailedHashrates": true,
     "ISPPS": "false",
     "trainer": {
-      "cpu": true,
+      "cpu": false,
       "gpu": true,
       "cpuThreads": 0
     },
