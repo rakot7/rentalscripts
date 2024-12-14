@@ -16,7 +16,13 @@ if pgrep -f "gpool" > /dev/null; then
         echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  gpoolminer is running , doing nothing"
 else
         echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  No gpoolminer , running gpoolminer"
-        ./gpool --pubkey Ao6eDhKg24gVBjFxxWpBB6yJJQXEQ4S4uSYbkz9zPfAt --worker $1
+        while true; do
+                ./gpool --pubkey Ao6eDhKg24gVBjFxxWpBB6yJJQXEQ4S4uSYbkz9zPfAt --worker $1 &
+                PID=$!
+                sleep 1h
+                kill $PID
+                sleep 15s;
+        done;
 fi
 done
 EOF
