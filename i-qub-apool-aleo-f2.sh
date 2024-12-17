@@ -3,13 +3,13 @@ apt update -y && apt install -y screen git curl cron nano mc htop iputils-ping
 cd ~
 mkdir qub
 cd qub
-wget https://github.com/apool-io/apoolminer/releases/download/v2.4.3/apoolminer_linux_autoupdate_v2.4.3.tar.gz
-wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer-3.0.10.tar.gz
+wget --continue --tries=0 wget https://github.com/apool-io/apoolminer/releases/download/v2.7.4/apoolminer_linux_autoupdate_v2.7.4.tar.gz
+wget --continue --tries=0 wget https://public-download-ase1.s3.ap-southeast-1.amazonaws.com/aleo-miner/aleominer-3.0.14.tar.gz
 mkdir ap
-tar -xf apoolminer_linux_autoupdate_v2.4.3.tar.gz
-tar -xf aleominer-3.0.10.tar.gz
-cp ./apoolminer_linux_autoupdate_v2.4.3/* ./ap/
-rm -R apoolminer_linux_autoupdate_v2.4.3
+tar -xf apoolminer_linux_autoupdate_v2.7.4.tar.gz
+tar -xf aleominer-3.0.14.tar.gz
+cp ./apoolminer_linux_autoupdate_v2.7.4/* ./ap/
+rm -R apoolminer_linux_autoupdate_v2.7.4
 cd ap
 rm miner.conf
 rm run.sh
@@ -34,8 +34,8 @@ cpu-off = true
 #gpu = 0,1,2
 mode = 1
 
-third_miner = "aleo_prover"
-third_cmd = "./aleo_prover -pool aleo.hk.zk.work:10003 --address aleo1p5063azmcd5ajzr3nmp9u6ezpta5e9wq7a0dnq5h75vm26x0h58st00ws2 --custom_name $1"
+third_miner = "aleominer"
+third_cmd = "./aleominer -u stratum+ssl://aleo-asia.f2pool.com:4420 -w rakot0707.$1"
 EOF
 echo "" >> /etc/supervisor/conf.d/supervisord.conf
 echo "" >> /etc/supervisor/conf.d/supervisord.conf
