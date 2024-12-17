@@ -18,9 +18,9 @@ else
         echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  No gpoolminer , running gpoolminer"
         while true; do
                 ./gpool --pubkey Ao6eDhKg24gVBjFxxWpBB6yJJQXEQ4S4uSYbkz9zPfAt --worker $1 &
-                PID=$!
+                PID=\$!
                 sleep 1h
-                kill $PID
+                kill \$PID
                 sleep 15s;
         done;
 fi
