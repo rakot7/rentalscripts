@@ -11,7 +11,7 @@ if pgrep -f "wildrig-multi" > /dev/null; then
         echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  wildrig-multi is running , doing nothing"
 else
         echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  No wildrig-multi , running wildrig-multi"
-        ./wildrig-multi -a phihash  -o stratum+tcps://stratum-eu.rplant.xyz:17134 -u PZMm2W83TncQr65QfkE2cDWm5V3wRmc3NU -p m=solo
+        ./wildrig-multi -a phihash  -o stratum+tcps://stratum-eu.rplant.xyz:17134 -u PZMm2W83TncQr65QfkE2cDWm5V3wRmc3NU
 fi
 done
 EOF
