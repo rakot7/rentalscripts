@@ -12,7 +12,7 @@ wget --continue --tries=0 https://poolsolution.s3.eu-west-2.amazonaws.com/QLAB.X
 wget --continue --tries=0 https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/cuda-v0.2.5-hotfix2/aleo_prover-v0.2.5_cuda_full_hotfix2.tar.gz
 tar -C qlab -xf QLAB.Xminer-latest.tar.gz
 cp /root/qub/qlab/QLAB.Xminer/* /root/qub/qlab/
-rm -R QLAB.Xminer/
+rm -R QLAB.Xminer
 tar -xf aleo_prover-v0.2.5_cuda_full_hotfix2.tar.gz aleo_prover/aleo_prover
 cp ./aleo_prover/aleo_prover ./qlab/aleo_prover
 rm -R aleo_prover
