@@ -32,7 +32,7 @@ cat <<EOF > appsettings.json
     "pps":true,
     "Idling": {
       "gpuOnly": true,
-      "command": ./gpool",
+      "command": "./gpool",
       "arguments": "--pubkey Ao6eDhKg24gVBjFxxWpBB6yJJQXEQ4S4uSYbkz9zPfAt --worker $1 ",
       "preCommand": null,
       "preCommandArguments": null,
