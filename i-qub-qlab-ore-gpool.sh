@@ -9,13 +9,12 @@ mkdir qub
 cd qub
 mkdir qlab
 wget --continue --tries=0 https://poolsolution.s3.eu-west-2.amazonaws.com/QLAB.Xminer-latest.tar.gz
-wget --continue --tries=0 https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/cuda-v0.2.5-hotfix2/aleo_prover-v0.2.5_cuda_full_hotfix2.tar.gz
 tar -C qlab -xf QLAB.Xminer-latest.tar.gz
 cp /root/qub/qlab/QLAB.Xminer/* /root/qub/qlab/
 rm -R QLAB.Xminer
-tar -xf aleo_prover-v0.2.5_cuda_full_hotfix2.tar.gz aleo_prover/aleo_prover
-cp ./aleo_prover/aleo_prover ./qlab/aleo_prover
-rm -R aleo_prover
+wget --continue --tries=0 https://github.com/gpool-cloud/gpool-cli/releases/download/v2024.48.1/gpool
+cp /root/qub/gpool /root/qub/qlab/gpool
+chmod +x /root/qub/qlab/gpool
 cd qlab
 rm appsettings.json
 cat <<EOF > appsettings.json
@@ -33,8 +32,8 @@ cat <<EOF > appsettings.json
     "pps":true,
     "Idling": {
       "gpuOnly": true,
-      "command": "./aleo_prover",
-      "arguments": "--pool aleo.asia1.zk.work:10003 --pool aleo.hk.zk.work:10003 --pool aleo.jp.zk.work:10003 --address aleo1p5063azmcd5ajzr3nmp9u6ezpta5e9wq7a0dnq5h75vm26x0h58st00ws2 --custom_name $1",
+      "command": ./gpool",
+      "arguments": "--pubkey Ao6eDhKg24gVBjFxxWpBB6yJJQXEQ4S4uSYbkz9zPfAt --worker $1 ",
       "preCommand": null,
       "preCommandArguments": null,
       "postCommand": null,
