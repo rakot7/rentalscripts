@@ -9,9 +9,9 @@ cat <<EOF > wala.sh
 #!/bin/bash
 while true; do
 if pgrep -f "gpool" > /dev/null; then
-        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  gpoolminer is running , doing nothing"
+        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  srbminer is running , doing nothing"
 else
-        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  No gpoolminer , running gpoolminer"
+        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  No srbminer , running srbminer"
         while true; do
 		./SRBMiner-MULTI --algorithm walahash --pool keeneticinternac5.keenetic.link:55555 --wallet waglayla:qqx0hxqwzck65e0mt9mxrl3kvm9s8fhpth0ak2rpatkjakksv3kuxykhlrggr --password x --cpu-threads -1 --log-file ./Logs/log-wala.txt --worker pdwlmixPID=\$1
                 sleep 1h
