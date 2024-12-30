@@ -1,23 +1,29 @@
 #!/bin/bash
 cd ~
-mkdir phi
-cd phi
-wget --continue --tries=0 https://github.com/andru-kun/wildrig-multi/releases/download/0.41.5/wildrig-multi-linux-0.41.5.tar.xz
-tar -xf wildrig-multi-linux-0.41.5.tar.xz
-cat <<EOF > phi.sh
+mkdir wala
+cd wala
+wget --continue --tries=0 https://github.com/doktor83/SRBMiner-Multi/releases/download/2.7.4/SRBMiner-Multi-2-7-4-Linux.tar.gz
+tar -xf SRBMiner-Multi-2-7-4-Linux.tar.gz
+cd SRBMiner-Multi-2-7-4
+cat <<EOF > wala.sh
 #!/bin/bash
 while true; do
-if pgrep -f "wildrig-multi" > /dev/null; then
-        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  wildrig-multi is running , doing nothing"
+if pgrep -f "gpool" > /dev/null; then
+        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  gpoolminer is running , doing nothing"
 else
-        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  No wildrig-multi , running wildrig-multi"
-        ./wildrig-multi -a phihash  -o stratum+tcps://stratum-eu.rplant.xyz:17134 -u PZMm2W83TncQr65QfkE2cDWm5V3wRmc3NU
+        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  No gpoolminer , running gpoolminer"
+        while true; do
+		./SRBMiner-MULTI --algorithm walahash --pool keeneticinternac5.keenetic.link:55555 --wallet waglayla:qqx0hxqwzck65e0mt9mxrl3kvm9s8fhpth0ak2rpatkjakksv3kuxykhlrggr --password x --cpu-threads -1 --log-file ./Logs/log-wala.txt --worker pdwlmixPID=\$1
+                sleep 1h
+                kill \$PID
+                sleep 15s;
+        done;
 fi
 done
 EOF
-chmod +x ./phi.sh
-screen -dmS ore ./phi.sh
+chmod +x ./wala.sh
+screen -dmS wala ./wala.sh
 echo "" >> /etc/supervisor/conf.d/supervisord.conf
 echo "" >> /etc/supervisor/conf.d/supervisord.conf
-echo "[program:phi]" >> /etc/supervisor/conf.d/supervisord.conf
-echo "command=/bin/bash -c 'cd /root/phi/ && screen -dmS phi ./phi.sh && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
+echo "[program:wala]" >> /etc/supervisor/conf.d/supervisord.conf
+echo "command=/bin/bash -c 'cd /root/wala/SRBMiner-Multi-2-7-4/ && screen -dmS wala ./wala.sh && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
