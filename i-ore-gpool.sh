@@ -1,5 +1,5 @@
 #!/bin/bash
-apt install -y screen git curl cron nano mc htop iputils-ping
+apt update && apt install -y screen git curl cron nano mc htop iputils-ping
 echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" >> /etc/apt/sources.list
 apt update
 apt install -y libc6
