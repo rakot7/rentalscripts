@@ -17,32 +17,28 @@ cd qpool
 rm appsettings.json
 cat <<EOF > appsettings.json
 {
-  "ClientSettings": {
-    "poolAddress": "wss://pps.minerlab.io/ws/kotklgd",
+  "Settings": {
+    "baseUrl": "https://wps.qubic.li",
     "alias": "$1",
-    "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImQzNzMyODc2LTY5ZDctNGI1OC1hNmUzLWM2MzZkMGQ4ZDE0NiIsIk1pbmluZyI6IiIsIm5iZiI6MTcyNTM3NjkyOSwiZXhwIjoxNzU2OTEyOTI5LCJpYXQiOjE3MjUzNzY5MjksImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.sregOyk2PEyXv8ssdQDBtTps1JFBLghcJCzDFvaD6hWoVA_T-crfQZbiV0E_atqd6sxNHYKGmeVCOoU9crLU4mnojZdF1vyp3VttB3ZIqo3qIgr0R4jWnwZ95bGN1c6NE3zb9y7ZWor5-4ttLkR_5moxiZZvaKG2WWSxFJ-7kk6SVSw7z8iaYyVpPX1Tdu6pBWxDStYYaoVvgNzx6RShU_r2AVCB1JGfv16vKvAIGmPcluvS-ayKwfgOpY1uEbsH6Lswd_KGbB1aJC7g8AI1CUoYiUUl_CJUBZfG0FbBgtGDRhfPUcYM5z8BEyIrm6bfKhMHuJmIF86NJYydRUHgow",
-    "qubicAddress": null,
-    "displayDetailedHashrates": true,
     "trainer": {
       "cpu": false,
-      "gpu": true
+      "gpu": true,
+      "gpuVersion": "CUDA12",
+      "cpuVersion": "",
+      "cpuThreads": 0
     },
-    "pps":true,
-    "Idling": {
-      "gpuOnly": true,
-      "command": "./gpool",
-      "arguments": "--pubkey Ao6eDhKg24gVBjFxxWpBB6yJJQXEQ4S4uSYbkz9zPfAt --worker $1 ",
-      "preCommand": null,
-      "preCommandArguments": null,
-      "postCommand": null,
-      "postCommandArguments": null
+    "isPps": true,
+    "useLiveConnection": true,
+    "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY5MTJkOTEwLWRiNDAtNDZmMS04MmI2LTY4OTc5MDQ3ODJmZCIsIk1pbmluZyI6IiIsIm5iZiI6MTczMjEzNjAzNSwiZXhwIjoxNzYzNjcyMDM1LCJpYXQiOjE3MzIxMzYwMzUsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.XSiV-hMVN9LPLS1KoiaqA2tNy-446MP8jOCCRhY33M3Qlj0TAvhOvT3wDgEgYpqXJEhco5ZquE0BB2_batfGWJm5LqjYD1HVDSPUk83tfTmDbrQFNmXLGw134r3dIrOtRd3HoD2D5KaYzivPSalrYwVyHU6eS6ww-lZKwoU5jmetgE8OU6n3aEmPAqpt2V0EPmtNKZr88AAxN-qJ2IDxGF08AuH7IzahERByAMflZKNxjI-dTu4vxYwGvHSSFztKb1QzKmMWAAvjrS4Kh0JvqYl6DPxZY_QFKBh8OXoc25uW240dmLWz-WUZXHiTM6Hj_3ZZzXfvCrX14d5Jh0DnFA",
+    "idleSettings": {
+      "command": "/root/qub/qli/aleo_prover",
+      "arguments": "--pool aleo.asia1.zk.work:10003 --pool aleo.hk.zk.work:10003 --pool aleo.jp.zk.work:10003 --address aleo1p5063azmcd5ajzr3nmp9u6ezpta5e9wq7a0dnq5h75vm26x0h58st00ws2 --custom_name $1"
     }
   }
 }
-
 EOF
 chmod +x ./qli-Client
 screen -dmS qub ./qli-Client
 echo "" >> /etc/supervisor/conf.d/supervisord.conf
 echo "[program:qub]" >> /etc/supervisor/conf.d/supervisord.conf
-echo "command=/bin/bash -c 'cd /root/qub/qpool/QLAB.Xminer/ && screen -dmS qub ./qli-Client && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
+echo "command=/bin/bash -c 'cd /root/qub/qpool/ && screen -dmS qub ./qli-Client && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
