@@ -7,15 +7,14 @@ apt install -y g++-11
 cd ~
 mkdir qub
 cd qub
+mkdir qpool
 #wget --continue --tries=0 https://github.com/qubic-li/hiveos/releases/download/latest/qubminer-latest.tar.gz
 wget --continue --tries=0 https://dl.qubic.li/downloads/qli-Client-3.1.1-Linux-x64.tar.gz
-wget --continue --tries=0 https://github.com/6block/zkwork_aleo_gpu_worker/releases/download/cuda-v0.2.5-hotfix2/aleo_prover-v0.2.5_cuda_full_hotfix2.tar.gz
-mkdir qubminer 
-tar -C ./qubminer/ -xf qli-Client-3.1.1-Linux-x64.tar.gz
-tar -xf aleo_prover-v0.2.5_cuda_full_hotfix2.tar.gz aleo_prover/aleo_prover
-cp ./aleo_prover/aleo_prover ./qubminer/aleo_prover
-rm -R aleo_prover
-cd qubminer 
+tar -C ./qpool/ -xf qli-Client-3.1.1-Linux-x64.tar.gz
+wget --continue --tries=0 https://github.com/gpool-cloud/gpool-cli/releases/download/v2024.48.1/gpool
+cp /root/qub/gpool /root/qub/qpool/gpool
+chmod +x /root/qub/qpool/gpool
+cd qpool 
 rm appsettings.json
 cat <<EOF > appsettings.json
 {
@@ -29,10 +28,10 @@ cat <<EOF > appsettings.json
       "cpu": false,
       "gpu": true
     },
-    "Idling": {
+     "Idling": {
       "gpuOnly": true,
-      "command": "./aleo_prover",
-      "arguments": "--pool aleo.asia1.zk.work:10003 --pool aleo.hk.zk.work:10003 --pool aleo.jp.zk.work:10003 --address aleo1p5063azmcd5ajzr3nmp9u6ezpta5e9wq7a0dnq5h75vm26x0h58st00ws2 --custom_name $1 ",
+      "command": "./gpool",
+      "arguments": "--pubkey Ao6eDhKg24gVBjFxxWpBB6yJJQXEQ4S4uSYbkz9zPfAt --worker $1 ",
       "preCommand": null,
       "preCommandArguments": null,
       "postCommand": null,
@@ -45,4 +44,4 @@ chmod +x ./qli-Client
 screen -dmS qub ./qli-Client
 echo "" >> /etc/supervisor/conf.d/supervisord.conf
 echo "[program:qub]" >> /etc/supervisor/conf.d/supervisord.conf
-echo "command=/bin/bash -c 'cd /root/qub/qubminer/ && screen -dmS qub ./qli-Client && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
+echo "command=/bin/bash -c 'cd /root/qub/qpool/ && screen -dmS qub ./qli-Client && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
