@@ -10,8 +10,8 @@ mkdir qub
 cd qub
 mkdir qpool
 #wget --continue --tries=0 https://github.com/qubic-li/hiveos/releases/download/latest/qubminer-latest.tar.gz
-wget --continue --tries=0 https://dl.qubic.li/downloads/qli-Client-3.1.1-Linux-x64.tar.gz
-tar -C ./qpool/ -xf qli-Client-3.1.1-Linux-x64.tar.gz
+wget --continue --tries=0 https://dl.qubic.li/downloads/qli-Client-3.2.0-Linux-x64.tar.gz
+tar -C ./qpool/ -xf qli-Client-3.2.0-Linux-x64.tar.gz
 wget --continue --tries=0 https://github.com/gpool-cloud/gpool-cli/releases/download/v2024.48.1/gpool
 cp /root/qub/gpool /root/qub/qpool/gpool
 chmod +x /root/qub/qpool/gpool
