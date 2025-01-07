@@ -3,15 +3,15 @@ apt update -y && apt install -y screen git curl cron nano mc htop iputils-ping
 cd /root/
 mkdir qub
 cd qub
-wget https://github.com/apool-io/apoolminer/releases/download/v2.6.6/apoolminer_linux_autoupdate_v2.6.6.tar.gz
-wget https://github.com/gpool-cloud/gpool-cli/raw/refs/heads/main/gpool
+wget --continue --tries=0 https://github.com/apool-io/apoolminer/releases/download/v2.7.9/apoolminer_linux_autoupdate_v2.7.9.tar.gz
+wget --continue --tries=0 https://github.com/gpool-cloud/gpool-cli/releases/download/v2024.48.1/gpool
 rm -R /root/qub/ap
 mkdir ap
-tar -xf apoolminer_linux_autoupdate_v2.6.6.tar.gz
+tar -xf apoolminer_linux_autoupdate_v2.7.9.tar.gz
 cp gpool ./ap/
 chmod +x ./ap/gpool
-cp ./apoolminer_linux_autoupdate_v2.6.6/* ./ap/
-rm -R apoolminer_linux_autoupdate_v2.6.6
+cp ./apoolminer_linux_autoupdate_v2.7.9/* ./ap/
+rm -R apoolminer_linux_autoupdate_v2.7.9
 cd ap
 rm miner.conf
 rm run.sh
