@@ -16,35 +16,25 @@ rm -R apoolminer_linux_autoupdate_v2.7.9
 cd ap
 rm miner.conf
 rm run.sh
-cat <<EOF > qub.sh
-#!/bin/bash
-while true; do
-if pgrep -f "apooliner" > /dev/null; then
-        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  apoolminer is running , doing nothing"
-else
-        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  No apoollminer , running apoolminer"
-        ./apoolminer --account CP_3kv3xuwg6d --pool qubic1.hk.apool.io:3334 --cpu-off --worker $1
-fi
-done
+cd ..
+cd ap
+curl -OL https://raw.githubusercontent.com/rakot7/rentalscripts/main/run.sh
+cat <<EOF > miner.conf
+algo=qubic
+account=CP_3kv3xuwg6d
+pool=qubic1.hk.apool.io:3334
+
+worker = $1
+cpu-off = true
+#thread = 12
+#gpu-off = false
+#gpu = 0,1,2
+mode = 1
+
+third_miner = "gpool"
+third_cmd = "./gpool --pubkey Ao6eDhKg24gVBjFxxWpBB6yJJQXEQ4S4uSYbkz9zPfAt --worker $1"
 EOF
-cat <<EOF > ore.sh
-#!/bin/bash
-while true; do
-if pgrep -f "gpool" > /dev/null; then
-        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  gpoolminer is running , doing nothing"
-else
-        echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  No gpoolminer , running gpoolminer"
-        ./gpool --pubkey Ao6eDhKg24gVBjFxxWpBB6yJJQXEQ4S4uSYbkz9zPfAt
-fi
-done
-EOF
-chmod +x ./qub.sh
-screen -dmS qub ./qub.sh
-chmod +x ./ore.sh
-screen -dmS ore ./ore.sh
-echo "" >> /etc/supervisor/conf.d/supervisord.conf
-echo "[program:qub]" >> /etc/supervisor/conf.d/supervisord.conf
-echo "command=/bin/bash -c 'cd /root/qub/ap/ && screen -dmS qub ./qub.sh && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
-echo "" >> /etc/supervisor/conf.d/supervisord.conf
-echo "[program:ore]" >> /etc/supervisor/conf.d/supervisord.conf
-echo "command=/bin/bash -c 'cd /root/qub/ap/ && screen -dmS ore ./ore.sh && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
+chmod +x ./run.sh
+screen -dmS qub ./run.sh
+echo "\n[program:qub]" >> /etc/supervisor/conf.d/supervisord.conf
+echo "command=/bin/bash -c 'cd /root/qub/ap/ && screen -dmS qub ./run.sh && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
