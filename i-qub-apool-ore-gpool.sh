@@ -1,5 +1,6 @@
 #!/bin/bash
-apt update -y && apt install -y screen git curl cron nano mc htop iputils-ping
+apt update -y 
+apt install -y screen git curl cron nano mc htop iputils-ping
 cd /root/
 mkdir qub
 cd qub
