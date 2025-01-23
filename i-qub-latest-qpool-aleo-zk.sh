@@ -1,4 +1,7 @@
 #!/bin/bash
+pkill -f 'run.sh'
+pkill -f 'apoolminer'
+pkill -f 'aleo_prover'
 apt update -y 
 apt install -y screen git curl cron nano mc htop iputils-ping
 echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" >> /etc/apt/sources.list
