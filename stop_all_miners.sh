@@ -1,2 +1,4 @@
 #!/bin/bash
-update-locale en_US.UTF-8
+pkill -f 'run.sh'
+pkill -f 'apoolminer'
+pkill -f 'aleo_prover'
