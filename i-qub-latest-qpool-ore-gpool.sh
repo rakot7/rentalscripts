@@ -1,10 +1,10 @@
 #!/bin/bash
-pkill -f 'ore.sh'
-pkill -f 'run.sh'
-pkill -f 'apoolminer'
-pkill -f 'aleo_prover'
-pkill -f 'gpool'
-pkill -f 'qli-Client'
+pkill -f ore.sh
+pkill -f run.sh
+pkill -f apoolminer
+pkill -f aleo_prover
+pkill -f gpool
+pkill -f qli-Client
 apt update -y 
 apt install -y screen git curl cron nano mc htop iputils-ping
 echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" >> /etc/apt/sources.list
