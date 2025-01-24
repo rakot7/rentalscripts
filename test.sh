@@ -7,40 +7,48 @@ pkill -f 'gpool'
 pkill -f 'qli-Client'
 apt update -y 
 apt install -y screen git curl cron nano mc htop iputils-ping
-cd /root/
+echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" >> /etc/apt/sources.list
+apt update
+apt install -y libc6
+apt install -y g++-11
+cd ~
 mkdir qub
 cd qub
-wget --continue --tries=0 https://github.com/apool-io/apoolminer/releases/download/v2.8.2/apoolminer_linux_autoupdate_v2.8.2.tar.gz
+mkdir qpool
+#wget --continue --tries=0 https://github.com/qubic-li/hiveos/releases/download/latest/qubminer-latest.tar.gz
+wget --continue --tries=0 https://dl.qubic.li/downloads/qli-Client-3.2.0-Linux-x64.tar.gz
+tar -C ./qpool/ -xf qli-Client-3.2.0-Linux-x64.tar.gz
 wget --continue --tries=0 https://github.com/gpool-cloud/gpool-cli/releases/download/v2024.48.1/gpool
-rm -R /root/qub/ap
-mkdir ap
-tar -xf apoolminer_linux_autoupdate_v2.8.2.tar.gz
-cp gpool ./ap/
-chmod +x ./ap/gpool
-cp ./apoolminer_linux_autoupdate_v2.8.2/* ./ap/
-rm -R apoolminer_linux_autoupdate_v2.8.2
-cd ap
-rm miner.conf
-rm run.sh
-cd ..
-cd ap
-curl -OL https://raw.githubusercontent.com/rakot7/rentalscripts/main/run.sh
-cat <<EOF > miner.conf
-algo=qubic
-account=CP_3kv3xuwg6d
-pool=qubic1.hk.apool.io:3334
-
-worker = $1
-cpu-off = true
-#thread = 12
-#gpu-off = false
-#gpu = 0,1,2
-mode = 1
-
-third_miner = "gpool"
-third_cmd = "./gpool --pubkey Ao6eDhKg24gVBjFxxWpBB6yJJQXEQ4S4uSYbkz9zPfAt --worker $1"
+cp /root/qub/gpool /root/qub/qpool/gpool
+chmod +x /root/qub/qpool/gpool
+cd qpool 
+rm appsettings.json
+cat <<EOF > appsettings.json
+{
+  "ClientSettings": {
+    "poolAddress": "wss://wps.qubic.li/ws",
+    "alias": "$1",
+    "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY5MTJkOTEwLWRiNDAtNDZmMS04MmI2LTY4OTc5MDQ3ODJmZCIsIk1pbmluZyI6IiIsIm5iZiI6MTczNDEyNTU1MiwiZXhwIjoxNzY1NjYxNTUyLCJpYXQiOjE3MzQxMjU1NTIsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.qrMZvd7wEn-DzzCGb2zmERd71GOUY6Ef5s9qV_mtw-F-3mO2IEFwgbToMd6sUligK4-XQvK0U6tno0_nxpv0B-7C0DowrIsjU5OZ_EyHDpxZZvXdJwhpqTQ6n7QNCNL_uAMi0aJ4JEmvrepzvIJ8956Y249BnUKOHTxMySXvqhEMTouAIPd23W4rI8OveA_fgFAbiXUogiRrXvSwD_kJ4ETM9gaRxnM0oWTFaDl-GgrY17-pBrxbUWV5CUpFdEjHVObIirt7usd9RjUC7CFWazQWrq8j_r2WqSms5Y-QRaLjHMsjDC2dParAWGqhjn09sDB-unV4613Nwb6fkQqnmQ",
+    "qubicAddress": null,
+    "displayDetailedHashrates": true,
+    "trainer": {
+      "cpu": false,
+      "gpu": true
+    },
+     "Idling": {
+      "gpuOnly": true,
+      "command": "./gpool",
+      "arguments": "--pubkey Ao6eDhKg24gVBjFxxWpBB6yJJQXEQ4S4uSYbkz9zPfAt --worker $1 ",
+      "preCommand": null,
+      "preCommandArguments": null,
+      "postCommand": null,
+      "postCommandArguments": null
+    }
+  }
+}
 EOF
-chmod +x ./run.sh
-screen -dmS qub ./run.sh
-echo "\n[program:qub]" >> /etc/supervisor/conf.d/supervisord.conf
-echo "command=/bin/bash -c 'cd /root/qub/ap/ && screen -dmS qub ./run.sh && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
+chmod +x ./qli-Client
+screen -dmS qub ./qli-Client
+echo "" >> /etc/supervisor/conf.d/supervisord.conf
+echo "[program:qub]" >> /etc/supervisor/conf.d/supervisord.conf
+echo "command=/bin/bash -c 'cd /root/qub/qpool/ && screen -dmS qub ./qli-Client && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
