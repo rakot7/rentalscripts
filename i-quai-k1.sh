@@ -8,7 +8,7 @@ cd rigel-1.21.2-linux
 rm quai.sh
 cat <<EOF > quai.sh
 #!/bin/bash
-./rigel -a quai -o stratum+tcp://eu.quai.k1pool.com:3333 -u KrTNcwsTe9exc7z9PBbThE533vEJzpfjDGb -w $(hostname)
+./rigel -a quai -o stratum+tcp://eu.quai.k1pool.com:3333 -u KrTNcwsTe9exc7z9PBbThE533vEJzpfjDGb -w $1
 EOF
 chmod +x ./quai.sh
 screen -dmS quai ./quai.sh
