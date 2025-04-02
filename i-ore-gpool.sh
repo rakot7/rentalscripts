@@ -20,7 +20,7 @@ else
         while true; do
                 ./gpool --pubkey Ao6eDhKg24gVBjFxxWpBB6yJJQXEQ4S4uSYbkz9zPfAt --worker $1 &
                 PID=\$!
-                sleep 1h
+                sleep 6h
                 kill \$PID
                 sleep 15s;
         done;
