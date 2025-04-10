@@ -8,7 +8,7 @@ apt install -y g++-11
 cd ~
 mkdir ore
 cd ore
-wget --continue --tries=0 https://github.com/gpool-cloud/gpool-cli/releases/download/v2025.11.2/gpool
+wget --continue --tries=0 https://github.com/gpool-cloud/gpool-cli/releases/download/v2025.15.1/gpool
 chmod +x ./gpool
 cat <<EOF > ore.sh
 #!/bin/bash
