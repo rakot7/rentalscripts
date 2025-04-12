@@ -12,7 +12,7 @@ wget --continue --tries=0 https://poolsolution.s3.eu-west-2.amazonaws.com/QLAB.X
 tar -C qlab -xf QLAB.Xminer-latest.tar.gz
 cp /root/qub/qlab/QLAB.Xminer/* /root/qub/qlab/
 rm -R QLAB.Xminer
-wget --continue --tries=0 https://github.com/gpool-cloud/gpool-cli/releases/download/v2024.48.1/gpool
+wget --continue --tries=0 https://github.com/gpool-cloud/gpool-cli/releases/download/v2025.15.1/gpool
 cp /root/qub/gpool /root/qub/qlab/gpool
 chmod +x /root/qub/qlab/gpool
 cd qlab
@@ -26,14 +26,14 @@ cat <<EOF > appsettings.json
     "qubicAddress": null,
     "displayDetailedHashrates": true,
     "trainer": {
-      "cpu": false,
+      "cpu": true,
       "gpu": true
     },
     "pps":true,
     "Idling": {
       "gpuOnly": true,
       "command": "./gpool",
-      "arguments": "--pubkey Ao6eDhKg24gVBjFxxWpBB6yJJQXEQ4S4uSYbkz9zPfAt --worker $1 ",
+      "arguments": "--pubkey Ao6eDhKg24gVBjFxxWpBB6yJJQXEQ4S4uSYbkz9zPfAt --worker $1 --pool 78.47.222.171:10475",
       "preCommand": null,
       "preCommandArguments": null,
       "postCommand": null,
