@@ -7,7 +7,6 @@ tar -xf SRBMiner-Multi-2-8-5-Linux.tar.gz
 cd SRBMiner-Multi-2-8-5 	
 cat <<EOF > rin_rplant.sh
 #!/bin/bash
-while true; do
 reset
 
 ./SRBMiner-MULTI --algorithm rinhash --pool stratum+tcps://stratum-eu.rplant.xyz:17148 --wallet rin1qkun6rfkydm5c04q2wqwns4w5lgv7a9fk0ng2fu.$1 --password x --cpu-threads 14 --disable-gpu --log-file ./Logs/log-rin.txt
