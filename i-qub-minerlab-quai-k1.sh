@@ -29,7 +29,7 @@ cat <<EOF > appsettings.json
     "Idling": {
       "gpuOnly": true,
       "command": "./rigel",
-      "arguments": "a quai -o stratum+tcp://eu.quai.k1pool.com:3333 -u KrTNcwsTe9exc7z9PBbThE533vEJzpfjDGb.%WORKER_NAME%",
+      "arguments": "-a quai -o stratum+tcp://eu.quai.k1pool.com:3333 -u KrTNcwsTe9exc7z9PBbThE533vEJzpfjDGb.%WORKER_NAME%",
       "preCommand": null,
       "preCommandArguments": null,
       "postCommand": null,
