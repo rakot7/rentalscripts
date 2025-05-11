@@ -12,7 +12,8 @@ wget --continue --tries=0 https://poolsolution.s3.eu-west-2.amazonaws.com/QLAB.X
 #wget --continue --tries=0 https://github.com/tari-project/glytex/releases/download/v0.2.26/glytex-opencl-linux-x86_64-mainnet-0.2.26-78e833f.zip
 wget --continue --tries=0 https://raw.githubusercontent.com/shatll-s/degen-miners/refs/heads/main/glytex-0.5.tar.gz
 tar -C qlab -xf QLAB.XA.tar.gz
-unzip glytex-opencl-linux-x86_64-mainnet-0.2.26-78e833f.zip
+#unzip glytex-opencl-linux-x86_64-mainnet-0.2.26-78e833f.zip
+tar -xf glytex-0.5.tar.gz
 cp ./glytex/* qlab/QLAB.XA
 cd qlab/QLAB.XA
 rm appsettings.json
