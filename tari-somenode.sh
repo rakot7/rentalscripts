@@ -15,7 +15,7 @@ if pgrep -f "glytex" > /dev/null; then
 else
         echo -e "$(date +"%Y-%m-%d %H:%M:%S")  ---  No glytex , running glytex"
         while true; do
-                ./glytex --tari-address 122FazuS26C89B8eLvsjPTTFYxYvX7XNs8YUN4tvbvZBHJmY2Lz2v5cCWcxi5Y97thGPqEhXdL3cAaQ99LwjSMJmxsy --tari-node-url http://91.99.63.87:5556 --grid-size 1024 --template-timeout-secs 5 --engine OpenCL --coinbase-extra v3,gBHAp7QDawX3nBS6LRovR54grUeM,1.0.0,J+UU1a80L+5hh5snSr7A23dRwp9gD7njuXVvO9fNY04 --p2pool-enabled
+                ./glytex --tari-node-url http://ninjaraider.com:55392 --grid-size 1024 --template-timeout-secs 5 --engine OpenCL --coinbase-extra v3,gBHAp7QDawX3nBS6LRovR54grUeM,1.0.0,J+UU1a80L+5hh5snSr7A23dRwp9gD7njuXVvO9fNY04 --p2pool-enabled
                 PID=\$!
                 sleep 6h
                 kill \$PID
