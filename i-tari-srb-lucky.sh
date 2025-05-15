@@ -1,0 +1,18 @@
+#!/bin/bash
+apt update -y
+apt install -y screen git curl cron nano mc htop iputils-ping
+cd ~
+mkdir tari
+cd tari
+wget --continue --tries=0 https://github.com/doktor83/SRBMiner-Multi/releases/download/2.8.8/SRBMiner-Multi-2-8-8-Linux.tar.gz
+tar -xf SRBMiner-Multi-2-8-8-Linux.tar.gz
+cd SRBMiner-Multi-2-8-8
+cat <<EOF > tari.sh
+#!/bin/bash
+while true; do
+	./SRBMiner-MULTI --algorithm sha3x --pool tari.luckypool.io:6118 --wallet 122FazuS26C89B8eLvsjPTTFYxYvX7XNs8YUN4tvbvZBHJmY2Lz2v5cCWcxi5Y97thGPqEhXdL3cAaQ99LwjSMJmxsy.$1
+        sleep 15s;
+done;
+EOF
+chmod +x ./tari.sh
+screen -dmS tari ./tari.sh
