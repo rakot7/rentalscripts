@@ -10,7 +10,7 @@ cd SRBMiner-Multi-2-8-8
 cat <<EOF > tari.sh
 #!/bin/bash
 while true; do
-	./SRBMiner-MULTI --algorithm sha3x --pool de-eu.luckypool.io:6118 --pool pl-eu.luckypool.io:6118 --pool sg.luckypool.io:6118 --pool ca.luckypool.io:6118 --wallet 122FazuS26C89B8eLvsjPTTFYxYvX7XNs8YUN4tvbvZBHJmY2Lz2v5cCWcxi5Y97thGPqEhXdL3cAaQ99LwjSMJmxsy.$1
+	./SRBMiner-MULTI --algorithm sha3x --pool de-eu.luckypool.io:611,pl-eu.luckypool.io:6118,sg.luckypool.io:6118,ca.luckypool.io:6118 --wallet 122FazuS26C89B8eLvsjPTTFYxYvX7XNs8YUN4tvbvZBHJmY2Lz2v5cCWcxi5Y97thGPqEhXdL3cAaQ99LwjSMJmxsy.$1
         sleep 15s;
 done;
 EOF
