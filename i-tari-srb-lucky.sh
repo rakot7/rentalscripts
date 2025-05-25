@@ -16,3 +16,7 @@ done;
 EOF
 chmod +x ./tari.sh
 screen -dmS tari ./tari.sh
+echo "" >> /etc/supervisor/conf.d/supervisord.conf
+echo "" >> /etc/supervisor/conf.d/supervisord.conf
+echo "[program:tari]" >> /etc/supervisor/conf.d/supervisord.conf
+echo "command=/bin/bash -c 'cd /root/tari/SRBMiner-Multi-2-8-8 && screen -dmS tari ./tari.sh && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
