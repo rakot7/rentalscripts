@@ -4,9 +4,9 @@ apt install -y screen git curl cron nano mc htop iputils-ping
 cd ~
 mkdir tari
 cd tari
-wget --continue --tries=0 https://github.com/doktor83/SRBMiner-Multi/releases/download/2.8.8/SRBMiner-Multi-2-8-8-Linux.tar.gz
-tar -xf SRBMiner-Multi-2-8-8-Linux.tar.gz
-cd SRBMiner-Multi-2-8-8
+wget --continue --tries=0 https://github.com/doktor83/SRBMiner-Multi/releases/download/2.9.0/SRBMiner-Multi-2-9-0-Linux.tar.gz
+tar -xf SRBMiner-Multi-2-9-0-Linux.tar.gz
+cd SRBMiner-Multi-2-9-0
 cat <<EOF > tari.sh
 #!/bin/bash
 while true; do
@@ -19,4 +19,4 @@ screen -dmS tari ./tari.sh
 echo "" >> /etc/supervisor/conf.d/supervisord.conf
 echo "" >> /etc/supervisor/conf.d/supervisord.conf
 echo "[program:tari]" >> /etc/supervisor/conf.d/supervisord.conf
-echo "command=/bin/bash -c 'cd /root/tari/SRBMiner-Multi-2-8-8 && screen -dmS tari ./tari.sh && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
+echo "command=/bin/bash -c 'cd /root/tari/SRBMiner-Multi-2-9-0 && screen -dmS tari ./tari.sh && sleep infinity'" >> /etc/supervisor/conf.d/supervisord.conf
