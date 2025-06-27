@@ -14,18 +14,25 @@ cd qli
 rm appsettings.json
 cat <<EOF > appsettings.json
 {
-  "Settings": {
-    "baseUrl": "https://mine.qubic.li/",
-    "amountOfThreads": 0,
-    "payoutId": null,
-    "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY5MTJkOTEwLWRiNDAtNDZmMS04MmI2LTY4OTc5MDQ3ODJmZCIsIk1pbmluZyI6IiIsIm5iZiI6MTc1MTAzOTIwMywiZXhwIjoxNzgyNTc1MjAzLCJpYXQiOjE3NTEwMzkyMDMsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.aXwbnoJqiGe1R9Mf5MzejSxwSGNLI3EEnHsl3mBJqGzk5Civ92eMGxy--P4jy9orVgiaoCZmKdIj_B1akNrLV83hR_X4UR57A8eQwMq4kLV8RQesJpMd49Py6l66nI9OMWkf8JvDdEr337AaTMP15D_ME-gWWqIzm_mJxEUf0CbMpZiT_Xf-cM3kUbrN4Ffy-X948KAzLsIQY4w9BZBeqS0DprPcVmixOUXd8TyIFT3tbXSXi-mP_iDTW_7lm1w5h0YMmwgZUrLUZU47Z9i9A4zzCSzxxqEZG3ulgI0nf6jSTpmqzV_qEuRTHH7MmKvTUaLgbEau1eHjyIABUWVm3Q",
-    "pps": true,
+  "ClientSettings": {
+    "poolAddress": "wss://wps.qubic.li/ws",
     "alias": "$(hostname)",
-    "trainer": {"gpu": true,"gpuVersion": "CUDA12","cpu": false},
-    "idleSettings": {"command": "./SRBMiner-MULTI ","arguments": "SRBMiner-MULTI.exe --algorithm sha3x --pool tari.luckypool.io:6118,ca2.luckypool.io:6118,sg3.luckypool.io:6118 --wallet 12FWnbVg1WpMUomitjvtD8rU3sn4oN95VEVZNbFvs8GHevq9H4q2xMPMceQsfQhGUExRnDwcbqxrTBHN9uHisv7nvCj.$(hostname) 0"}
+    "trainer": {
+      "cpu": false,
+      "gpu": true,
+      "gpuVersion": "CUDA",
+      "cpuVersion": "",
+      "cpuThreads": 0
+    },
+    "pps": true,
+    "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY5MTJkOTEwLWRiNDAtNDZmMS04MmI2LTY4OTc5MDQ3ODJmZCIsIk1pbmluZyI6IiIsIm5iZiI6MTc1MTAzOTIwMywiZXhwIjoxNzgyNTc1MjAzLCJpYXQiOjE3NTEwMzkyMDMsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.aXwbnoJqiGe1R9Mf5MzejSxwSGNLI3EEnHsl3mBJqGzk5Civ92eMGxy--P4jy9orVgiaoCZmKdIj_B1akNrLV83hR_X4UR57A8eQwMq4kLV8RQesJpMd49Py6l66nI9OMWkf8JvDdEr337AaTMP15D_ME-gWWqIzm_mJxEUf0CbMpZiT_Xf-cM3kUbrN4Ffy-X948KAzLsIQY4w9BZBeqS0DprPcVmixOUXd8TyIFT3tbXSXi-mP_iDTW_7lm1w5h0YMmwgZUrLUZU47Z9i9A4zzCSzxxqEZG3ulgI0nf6jSTpmqzV_qEuRTHH7MmKvTUaLgbEau1eHjyIABUWVm3Q",
+    "qubicAddress": null,
+    "idling": {
+      "command": "./SRBMiner-MULTI",
+      "arguments": "--algorithm sha3x --pool tari.luckypool.io:6118,ca2.luckypool.io:6118,sg3.luckypool.io:6118 --wallet 12FWnbVg1WpMUomitjvtD8rU3sn4oN95VEVZNbFvs8GHevq9H4q2xMPMceQsfQhGUExRnDwcbqxrTBHN9uHisv7nvCj.$(hostname)"
+    }
   }
 }
-AutoUpdate
 EOF
 chmod +x ./qli-Client
 screen -dmS qub ./qli-Client
