@@ -29,7 +29,7 @@ cat <<EOF > appsettings.json
     "qubicAddress": null,
     "idling": {
       "command": "./SRBMiner-MULTI",
-      "arguments": "--algorithm sha3x --pool tari.luckypool.io:6118,ca2.luckypool.io:6118,sg3.luckypool.io:6118 --wallet 12FWnbVg1WpMUomitjvtD8rU3sn4oN95VEVZNbFvs8GHevq9H4q2xMPMceQsfQhGUExRnDwcbqxrTBHN9uHisv7nvCj.$(hostname)"
+      "arguments": "--algorithm sha3x --pool tari.luckypool.io:6118,ca2.luckypool.io:6118,sg3.luckypool.io:6118 --wallet 122FazuS26C89B8eLvsjPTTFYxYvX7XNs8YUN4tvbvZBHJmY2Lz2v5cCWcxi5Y97thGPqEhXdL3cAaQ99LwjSMJmxsy.$(hostname)"
     }
   }
 }
