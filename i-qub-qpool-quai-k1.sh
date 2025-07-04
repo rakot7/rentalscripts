@@ -29,7 +29,7 @@ cat <<EOF > appsettings.json
     "qubicAddress": null,
     "idling": {
       "command": "./rigel",
-      "arguments": "./rigel -a quai -o stratum+tcp://eu.quai.k1pool.com:3333 -u KrTNcwsTe9exc7z9PBbThE533vEJzpfjDGb -w $(hostname)"
+      "arguments": "-a quai -o stratum+tcp://eu.quai.k1pool.com:3333 -u KrTNcwsTe9exc7z9PBbThE533vEJzpfjDGb -w $(hostname)"
     }
   }
 }
