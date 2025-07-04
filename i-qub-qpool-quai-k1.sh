@@ -8,6 +8,8 @@ wget --continue --tries=0 https://dl.qubic.li/downloads/qli-Client-3.3.8-Linux-x
 wget --continue --tries=0 https://github.com/rigelminer/rigel/releases/download/1.22.1/rigel-1.22.1-linux.tar.gz
 tar -C qli -xf qli-Client-3.3.8-Linux-x64.tar.gz
 tar -C qli -xf rigel-1.22.1-linux.tar.gz
+mv ./qli/rigel-1.22.1-linux/rigel ./qli/rigel
+rm -r ./qli/rigel-1.22.1-linux
 cd qli 
 rm appsettings.json
 cat <<EOF > appsettings.json
