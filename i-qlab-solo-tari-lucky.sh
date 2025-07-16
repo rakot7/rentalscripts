@@ -12,11 +12,11 @@ wget --continue --tries=0 https://poolsolution.s3.eu-west-2.amazonaws.com/QLAB.X
 wget --continue --tries=0 https://github.com/doktor83/SRBMiner-Multi/releases/download/2.9.4/SRBMiner-Multi-2-9-4-Linux.tar.gz
 tar -C qlab -xf QLAB.XA.tar.gz
 tar -C qlab -xf SRBMiner-Multi-2-9-4-Linux.tar.gz
+cd qlab 
 mv ./SRBMiner-Multi-2-9-4/SRBMiner-MULTI ./
 mv ./QLAB.XA/* ./
 rm -r QLAB.XA
 rm -r SRBMiner-Multi-2-9-4
-cd qlab
 rm appsettings.json
 cat <<EOF > appsettings.json
 {
