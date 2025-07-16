@@ -3,9 +3,11 @@ apt update -y && apt install -y screen git curl cron nano mc htop iputils-ping
 cd ~
 mkdir qub
 cd qub
-mkdir qli
+mkdir qlab
 wget --continue --tries=0 https://dl.qubic.li/downloads/qli-Client-3.3.8-Linux-x64.tar.gz
 wget --continue --tries=0 https://github.com/doktor83/SRBMiner-Multi/releases/download/2.9.3/SRBMiner-Multi-2-9-3-Linux.tar.gz
+tar -xf qli-Client-3.3.8-Linux-x64.tar.gz
+tar -xf 
 tar -C qli -xf qli-Client-3.3.8-Linux-x64.tar.gz
 tar -C qli -xf SRBMiner-Multi-2-9-3-Linux.tar.gz
 mv ./qli/SRBMiner-Multi-2-9-3/* ./qli/
