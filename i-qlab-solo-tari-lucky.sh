@@ -8,13 +8,13 @@ cd ~
 mkdir qub
 cd qub
 mkdir qlab
-wget --continue --tries=0 https://poolsolution.s3.eu-west-2.amazonaws.com/QLAB.XM.tar.gz
+wget --continue --tries=0 https://poolsolution.s3.eu-west-2.amazonaws.com/QLAB.XA.tar.gz
 wget --continue --tries=0 https://github.com/doktor83/SRBMiner-Multi/releases/download/2.9.4/SRBMiner-Multi-2-9-4-Linux.tar.gz
-tar -C qlab -xf QLAB.XM.tar.gz
+tar -C qlab -xf QLAB.XA.tar.gz
 tar -C qlab -xf SRBMiner-Multi-2-9-4-Linux.tar.gz
 mv ./SRBMiner-Multi-2-9-4/SRBMiner-MULTI ./
-mv ./QLAB.XM/* ./
-rm -r QLAB.XM
+mv ./QLAB.XA/* ./
+rm -r QLAB.XA
 rm -r SRBMiner-Multi-2-9-4
 cd qlab
 rm appsettings.json
