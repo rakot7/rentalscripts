@@ -30,7 +30,7 @@ cat <<EOF > appsettings.json
       "cpu": true,
       "gpu": true
     },
-    "pps":true,
+    "pps":faalse,
     "Idling": {
       "gpuOnly": true,
       "command": "./SRBMiner-MULTI",
