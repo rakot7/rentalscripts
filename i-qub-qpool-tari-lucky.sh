@@ -3,15 +3,13 @@ apt update -y && apt install -y screen git curl cron nano mc htop iputils-ping
 cd ~
 mkdir qub
 cd qub
-mkdir qlab
+mkdir qli
 wget --continue --tries=0 https://dl.qubic.li/downloads/qli-Client-3.3.8-Linux-x64.tar.gz
-wget --continue --tries=0 https://github.com/doktor83/SRBMiner-Multi/releases/download/2.9.3/SRBMiner-Multi-2-9-3-Linux.tar.gz
-tar -xf qli-Client-3.3.8-Linux-x64.tar.gz
-tar -xf 
+wget --continue --tries=0 https://github.com/doktor83/SRBMiner-Multi/releases/download/2.9.4/SRBMiner-Multi-2-9-4-Linux.tar.gz
 tar -C qli -xf qli-Client-3.3.8-Linux-x64.tar.gz
-tar -C qli -xf SRBMiner-Multi-2-9-3-Linux.tar.gz
-mv ./qli/SRBMiner-Multi-2-9-3/* ./qli/
-rm -r ./qli//SRBMiner-Multi-2-9-3
+tar -C qli -xf SRBMiner-Multi-2-9-4-Linux.tar.gz
+mv ./qli/SRBMiner-Multi-2-9-4/* ./qli/
+rm -r ./qli//SRBMiner-Multi-2-9-4
 cd qli 
 rm appsettings.json
 cat <<EOF > appsettings.json
