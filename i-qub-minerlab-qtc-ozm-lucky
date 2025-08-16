@@ -26,7 +26,7 @@ cat <<EOF > appsettings.json
     "accessToken": eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY5MTJkOTEwLWRiNDAtNDZmMS04MmI2LTY4OTc5MDQ3ODJmZCIsIk1pbmluZyI6IiIsIm5iZiI6MTc1NTM3NDQ4MiwiZXhwIjoxNzg2OTEwNDgyLCJpYXQiOjE3NTUzNzQ0ODIsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.kDT7f4CtflDHySnmiBnU6hs3KUKfPJ4HwS1J6l_wcKwyDPg0VerUnWA2UbTvwOZ0bXZPMTvO99WqrMNbmWzS4EY1rjnj5_fuL0swkW-F11K1Yw8o7gWgP-wYuuD8bylM-nVPvJyA7VZz8PV7D0a4VSKP_ilChXbTVvUQn_xT1NE-X_7_9oubol1AbDQh2_lP9EhxfZPYLUVZO3_aX7j7H_Wt37CaW91WNI_WBdmjhvSRpXQLyaMsg37stP_wwmNZ11gKw6Gk-Go5ZsHDvRpp1vMjgwAdHrye9cETulucEZoNqP-Qb2S2wuHuGZPNEyxiMhlLXSTdT7Aii9kOj7TutQ",
     "qubicAddress": null,
     "idling": {
-      "command": "./SRBMiner-MULTI",
+      "command": "./onezerominer",
       "arguments": "--algorithm sha3x --pool tari.luckypool.io:6118,ca2.luckypool.io:6118,sg3.luckypool.io:6118 --wallet 122FazuS26C89B8eLvsjPTTFYxYvX7XNs8YUN4tvbvZBHJmY2Lz2v5cCWcxi5Y97thGPqEhXdL3cAaQ99LwjSMJmxsy.$(hostname)"
     }
   }
