@@ -5,6 +5,7 @@ apt update
 apt install -y libc6
 apt install -y g++-11
 cd ~
+
 mkdir qub
 cd qub
 mkdir qlab
