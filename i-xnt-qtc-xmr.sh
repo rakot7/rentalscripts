@@ -27,7 +27,7 @@ fi
 while true; do
     target=$(ps aux | grep dr_xnt_prover | grep -v grep)
     if [ -z "$target" ]; then
-        ./dr_xnt_prover --pool stratum+tcp://xnt.drpool.io:30120 --worker $accountname -g 0,1 -m 1 --extra 'onezerominer;-a;qhash;-w;bc1qg4vaek7aqu9jkf0c7epf6lm6wsf8z5c0x9rz22.$(hostname);-o;stratum+tcp://qubitcoin.luckypool.io:8610'
+        ./dr_xnt_prover --pool stratum+tcp://xnt.drpool.io:30120 --worker \$accountname -g 0,1 -m 1 --extra 'onezerominer;-a;qhash;-w;bc1qg4vaek7aqu9jkf0c7epf6lm6wsf8z5c0x9rz22.$(hostname);-o;stratum+tcp://qubitcoin.luckypool.io:8610'
         sleep 5
     fi
     sleep 60
