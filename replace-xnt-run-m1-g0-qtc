@@ -1,4 +1,8 @@
 #!/bin/bash
+cd /hive/miners/custom/xntprover/ 
+wget --continue --tries=0 https://github.com/OneZeroMiner/onezerominer/releases/download/v1.7.3/onezerominer-linux-1.7.3.tar.gz
+tar -xf onezerominer-linux-1.7.3.tar.gz
+cp ./onezerominer-linux/onezerominer ./onezerominer
 mv h-run.sh h-run.sh.orig
 cat <<EOF > h-run.sh
 #!/bin/bash
