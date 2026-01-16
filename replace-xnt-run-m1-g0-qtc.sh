@@ -15,7 +15,7 @@ APP_PATH=.$APPNMAE
 pkill -9 $APPNMAE
 
 
-./xntprover -p stratum+tcp://xnt.drpool.io:30120 -w kotklgd.$(hostname)  -m 1 -g 0 --extra 'onezerominer;-a;vecno:qpj3f0tzvwdgw3r5ute43j9j7lrukg0rzw0mwfv8lptq7qxfgs7k7l3g8uthy;--stratum-worker;$(hostname)' >>${CUSTOM_LOG_BASENAME}.log 2>&1
-echo "./xntprover -p stratum+tcp://xnt.drpool.io:30120 -w kotklgd.$(hostname)  -m 1 -g 0 --extra 'onezerominer;-a;vecno:qpj3f0tzvwdgw3r5ute43j9j7lrukg0rzw0mwfv8lptq7qxfgs7k7l3g8uthy;--stratum-worker;$(hostname)' >> ${CUSTOM_LOG_BASENAME}.log 2>&1"
+./xntprover -p stratum+tcp://xnt.drpool.io:30120 -w kotklgd.$(hostname)  -m 1 -g 0 --extra 'onezerominer;-a;qhash;-w;bc1qg4vaek7aqu9jkf0c7epf6lm6wsf8z5c0x9rz22.$(hostname);-o;stratum+tcp://qubitcoin.luckypool.io:8610' >>${CUSTOM_LOG_BASENAME}.log 2>&1
+echo "./xntprover -p stratum+tcp://xnt.drpool.io:30120 -w kotklgd.$(hostname)  -m 1 -g 0 --extra 'onezerominer;-a;qhash;-w;bc1qg4vaek7aqu9jkf0c7epf6lm6wsf8z5c0x9rz22.$(hostname);-o;stratum+tcp://qubitcoin.luckypool.io:8610' >> ${CUSTOM_LOG_BASENAME}.log 2>&1"
 EOF
 chmod +x ./h-run.sh 
