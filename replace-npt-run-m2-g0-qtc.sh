@@ -10,7 +10,7 @@ cat <<EOF > h-run.sh
 source h-manifest.conf
 source \$CUSTOM_CONFIG_FILENAME
 APPNMAE=\$CUSTOM_NAME
-APP_PATH=.\$APPNMAE
+APP_PATH=./$APPNMAE
 
 pkill -9 \$APPNMAE
 
