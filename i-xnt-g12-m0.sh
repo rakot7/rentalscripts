@@ -28,5 +28,4 @@ sleep 60
 done
 EOF
 chmod +x ./inner_guesser.sh
-screen -dmS xnt /root/xnt/dr_xnt_prover/inner_guesser.sh
-screen -r xn
+nohup /root/xnt/dr_xnt_prover/inner_guesser.sh
