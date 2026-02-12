@@ -6,8 +6,8 @@ mkdir xnt
 cd xnt
 wget --continue --tries=0 https://pub-7c2f8935763c410d8897cc0d6379670e.r2.dev/ubuntu_20-dr_xnt_prover-1.2.0.tar.gz
 tar -xf ubuntu_20-dr_xnt_prover-1.2.0.tar.gz
-wget --continue --tries=0 https://github.com/OneZeroMiner/onezerominer/releases/download/v1.7.3/onezerominer-linux-1.7.3.tar.gz
-tar -xf onezerominer-linux-1.7.3.tar.gz
+wget --continue --tries=0 https://github.com/OneZeroMiner/onezerominer/releases/download/v1.7.4/onezerominer-linux-1.7.4.tar.gz
+tar -xf onezerominer-linux-1.7.4.tar.gz
 cp ./onezerominer-linux/onezerominer ./dr_xnt_prover/
 cd dr_xnt_prover
 rm inner_guesser.sh
@@ -27,7 +27,7 @@ fi
 while true; do
     target=$(ps aux | grep dr_xnt_prover | grep -v grep)
     if [ -z "$target" ]; then
-        ./dr_xnt_prover --pool stratum+tcp://xnt.drpool.io:30120 --worker \$accountname -g 0,1 -m 1 --extra 'onezerominer;-a;qhash;-w;bc1qg4vaek7aqu9jkf0c7epf6lm6wsf8z5c0x9rz22.$(hostname);-o;stratum+tcp://qubitcoin.luckypool.io:8610'
+        ./dr_xnt_prover --pool stratum+tcp://xnt.drpool.io:30120 --worker \$accountname -g 0,1,2 -m 1 --extra 'onezerominer;-a;qhash;-w;bc1qg4vaek7aqu9jkf0c7epf6lm6wsf8z5c0x9rz22.$(hostname);-o;stratum+tcp://qubitcoin.luckypool.io:8610'
         sleep 5
     fi
     sleep 60
