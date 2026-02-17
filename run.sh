@@ -120,7 +120,7 @@ while true; do
 			elif [ $time_diff -le 2700 ]; then
 				sleep_time=20
 			else
-				sleep_time=10
+				sleep_time=60
 			fi
 			echo -e "$(date +"%Y-%m-%d %H:%M:%S")     \033[32mINFO\033[0m Wait for $sleep_time seconds to check the template"
 			sleep $sleep_time
