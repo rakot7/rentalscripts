@@ -23,16 +23,12 @@ rm /etc/supervisor/conf.d/supervisord.conf
 cat <<EOF > /etc/supervisor/conf.d/supervisord.conf
 [supervisord]
 nodaemon=true
-
 [program:sshd]
 command=/usr/sbin/sshd -D
-
 [program:jupyter]
 command=/bin/bash -c 'jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --no-browser'
-
 [program:delegated_entrypoint]
 command=/bin/bash /etc/delegated-entrypoint.sh
-
 [program:nock]
 command=/bin/bash -c 'cd /root/nock/ && screen -dmS nock ./nock.sh && sleep infinity'
 EOF
