@@ -10,7 +10,9 @@ cd root
 mkdir nock
 cd nock
 mv golden-miner-pool-prover golden-miner-pool-prover.bkp
-wget --continue --tries=0 https://github.com/GoldenMinerNetwork/golden-miner-nockchain-gpu-miner/releases/download/v0.2.1/golden-miner-pool-prover
+wget --continue --tries=0 https://github.com/GoldenMinerNetwork/golden-miner-nockchain-gpu-miner/releases/download/v0.3.1/golden_miner_hiveos-0.3.1.tar.gz
+tar -xf golden_miner_hiveos-0.3.1.tar.gz
+cp ./golden_miner_hiveos/golden-miner-pool-prover ./
 chmod +x ./golden-miner-pool-prover
 cat <<EOF > nock.sh
 while true; do
