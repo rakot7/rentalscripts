@@ -1,0 +1,54 @@
+#!/bin/bash
+apt update -y;
+apt install -y screen git curl cron nano mc htop iputils-ping;
+cd /root/
+mkdir xnt
+cd xnt/
+mkdir poolhub
+cd poolhub/
+wget --continue --tries=0 https://github.com/Qubic-Solutions/OXZD/releases/download/0.8.1/oxzd-x86-64
+chmod +x ./oxzd-x86-64
+rm oxzd_config.json
+cat <<EOF > oxzd_config.json
+{
+  "selected": [
+    "xnt-gpu"
+  ],
+  "algo_list": [
+    {
+      "id": "xnt-gpu",
+      "algo": "xnt",
+      "pool": "stratum+ssl://eu.poolhub.io:30111",
+      "worker_name": "$(hostname)",
+      "address": "xntnwm1pw2xxf66dyphyu9g8q2dxjprm8wkud96js4lmphjzur9nspmnev7aalsa7rmm6vflrw3s8pqruh55qwwmt83f5aes3gs4nlkfg5wvtnwgmajca7r0uxzhyac8929rqsaj2u3c2hquqk60ax8y5y3c2mtflpxtpv6998fv6pugcqdq6uywjn6l26l9ycxkdr5vk3gvglmmx6wyqgq46p97atafg5duj2cdgjl5u8cftgagjnqgv6xaztpd9c3337vksnaxhu5vrfe3n2ejz56xd5pv88ska34j700jlpv26eya0t08xzaxfyg8e2kc585jnj0sshce8rez8dmnn45f07wjresdf44j0w3cwr8y4ngm369r5jg0jcqdrjhyg5gmajdg23vccd05hgl4gyfmzzwpvqmy7c52rj9qs0ck4nkyvyz2hpwu0vyvelyyvf6mvfh0wruqzsz5wz8c0p9hlrtskmr59x7f42wufr7mrty0haqc32te7swk5ehcrzzyg0mdsx0qkwlwdymkam0f2sr0ygkklu7ppdw5d83a4d6tswpp8vkt3u8sugxt0mzsrrscfhhlcqvpk6fqyx5sc54m23hddjs5pqspqz45grtsutw3tegma0ndd2du88qrf94e8v03g5n0llrpm6nu3623kte67u9y7p98zd6sktv5knq046aj4hhalq6pw2gtdllzd9vvss2lluwr26n8yfdw7qz2383ctxu8xscap2na2hyf8p2363z0k6v7pn3qtccmqq674h3hlxz9quntlla4slx26l3seklxe3vgjtekcaraz2m5gjt5z9xns9d6gaajqldsx3fcnpdaedrwjtn6cva46saefmg3nskj268xu8xa7jdzewvjy74hw727tuvll49k8qtlrlg0rfvw2nc3rp5d4ynnmcf9v4h5r3nwjhhrfvmuujmhhnl274g7j7z2h5xz09qaqsm0jcf6alyye34axlnl9m5e7asgzn9523lqmutlektu2jpudeu0glummfkackgfv5z03xy93pflf78rvzp2at7crq6ntd3el3vsa64xlzjcw92ytnvk86w34jdl77t9mqe2phq85exk59ud9q4s7gm56c4tuk8f44lp030qfvj5ptr2ke27l9ejk9lnvufkz25465wh7xuemyjd8ppk7py43cv6cutfphxmvapme0rghrnrqt6czja88jscdukaqhdz9434u6ugxxpg6td8wtzxegtpw320jpykuhaxetgmk3f2y5ger85nkgrzmwaghdf3vhkz0p6837zyst4z46ekv09af7hdkcrqzveagqcdf4ycahtqcg2lxj3nf6fq533ldtxmxq9fptlaxfsld62g4lqplw8m8pr6rfs948jaswm2hdu7x6cyq7jqph6y2muldk9h5m4g93eaqffxmja8vcj9lp77u0c8xrx92t4skq78crdva6sa9p9u4qkzg6xepm0r907fa2fww8rtpaw97fwj5q9ryz3zhkepu380sqezvhqhnyspunlv8n6rpggm8v4us5kma38hw5elelhulh6y46e3upxgw9a7qeq2a0zad8m3f0jadm6vmyky7c5euap0yd03rc42asqt8tgkzncv4nntpaeryx3hg3mgw6ee4nj5ck5ccztsculu0mzqu4egg7r5ednxx08j92afyv5wd7encg7n3e3rwkpweukskjhwupf4hsvdmufv48w58addzsf8u5vktnflrcsj6rlvm6dpshxgf75gzh5289lywccwdcn9aslwwj82kzx8hyzqmq6a296a986w3ycqs7p58wr4h62jgr4hal59r3nz94wx6q6t7fedztmn02hayzee3yhukfns0ajvl5y85c48rysx2xlsdwd3g6qupwp4xzj8tz8gj95wxkgm4u3v8gqa2ks4v0l77hkujfvrymnzldkjxwr0c3xv22twscdl48usnmhyy476x0968q6hlc9rv7d8awk5ck2wnm6lk946hsqunsu7grhrlkfw7dgdswce7nl9p9srmdd8m93z3gjkvtl29gjmg44eu4gpr9wr450ekard2v5087crhx7378dgt6ekfqegg8my7wyakea40lt4wnv4edpp4uqh8jwn3csga2p99dak98kw8mkzzjgdfh6rswlfdkal6u9p2h4s6v92jfr80vlarlzr087kw757ra5g6l3dqcnv3k8pzpr5up3lptkud50ggyhfym54h4v6z3xex02udyjaw2kph3aea73j294aqkxp037rl26s6hclw05k9ty2t8qwskgxpjmnlegl0kj0avehrez5vmjncgyy8dxqplmj2clda082zpcz66e5068vqwvr0d836fuly334x27wc9n3laj0ceed285p82qhmkax8caauf3h8pzvsuvhxaf8hnmc35078p73xjpq7r6en67mjed05sgxrj463y44snhh7unwcu59ws8pu0qye0j7q5puplp9apxn98j7y8mz546dafxn7s4f34w50sml87jxz4fjn5977svum8zrphca3gmjl6er252xczszn55t5v6f45xh9fgjl780v3je8d566p8pjfxaugpptvqhecs834ljdl0zkrqn4rgxrdfmkzmcn5rl227e95wxylacm5us46uefzh3lrfw6enk03cpl9yzvvdl0uj67kdtkzl8kzu8tx79v63yf6ketsyxl8gptqjkqeav6ktav38nh8jl33nja4hm7s2tgnurk3zkxwvsccsdytdn2z5mqw4fwap426vd2ptrlxnq2253cnvgp7t3ru5j8w7er3nzrv7rjel7c48jefaltfq22uahzxzc54cxa692jpv6fng9n6pgqa8zjc539q0ndnnmc4cx33ze3wdwyc84q5szdwq3zadcvtlvuak766fmf4gnek7s6xgwrkeld64m94cl4uqj9n9tava8cvrvwlungm75t9fe6j6z86he40vhah9sy8x8jcavzmmnqdpv0u5ac5gxplsxrv3h7g0h4752hz903csd3uywhtczyrkp6cu0eyvufkuwqm29h7rvnqwds6ckgpl3g9jhrnl255m50ftfgh7ckxljt275w40x5gpx7c3pp035tdqpr20zd4k9xvekwye8w5ufz0hg4jqdg88x92pjxh0ejq4qx07k24xndcyupn0z373vyp3qj5254c20p433ww8srym0snghps7rlgxq2s0hudslnkw93naa0x9rqz7twx6ynp35pv9cwwgsm5jgq2egvaadrnvpwuzpe4hjscmz2jy40h406dzsjazd70teadxw88aztvgp6g6rjahs263pf6ppuvmrdyu0pz4nr8xnfl4hvu6ncklxjqazgmnvu53arvy8msgeaj3n6j0upjn63qakx63wr7z0kr9t46a0z8qgqkf62azxwj7ycl8fyt",
+      "password": "x",
+      "config": {
+        "type": "gpu",
+        "option": "all"
+      }
+    }
+  ]
+}
+EOF
+cat <<EOF > xnt.sh
+#!/bin/bash
+./oxzd-x86-64 run
+EOF
+chmod +x ./xnt.sh
+screen -dmS xnt ./xnt.sh
+screen -r x
+
+rm /etc/supervisor/conf.d/supervisord.conf
+cat <<EOF > /etc/supervisor/conf.d/supervisord.conf
+[supervisord]
+nodaemon=true
+[program:sshd]
+command=/usr/sbin/sshd -D
+[program:jupyter]
+command=/bin/bash -c 'jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --no-browser'
+[program:delegated_entrypoint]
+command=/bin/bash /etc/delegated-entrypoint.sh
+[program:xnt_poolhub]
+command=/bin/bash -c 'cd /root/xnt/poolhub/ && screen -dmS xnt ./xnt.sh && sleep infinity'
+EOF
+
