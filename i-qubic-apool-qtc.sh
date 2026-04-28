@@ -4,9 +4,9 @@ apt install -y screen git curl cron nano mc btop iputils-ping
 cd /root/
 mkdir qubic
 cd qubic
-wget --continue --tries=0 https://github.com/apool-io/apoolminer/releases/download/v3.4.4/apoolminer_linux_qubic_autoupdate_v3.4.4.tar.gz
-tar -xf apoolminer_linux_qubic_autoupdate_v3.4.4.tar.gz
-mv apoolminer_linux_qubic_autoupdate_v3.4.4 apool
+wget --continue --tries=0 https://github.com/apool-io/apoolminer/releases/download/v3.6.1/apoolminer_linux_qubic_autoupdate_v3.6.1.tar.gz
+tar -xf apoolminer_linux_qubic_autoupdate_v3.6.1.tar.gz
+mv apoolminer_linux_qubic_autoupdate_v3.6.1 apool
 cd apool
 wget --continue --tries=0 https://github.com/OneZeroMiner/onezerominer/releases/download/v1.7.4/onezerominer-linux-1.7.4.tar.gz
 tar -xf onezerominer-linux-1.7.4.tar.gz
