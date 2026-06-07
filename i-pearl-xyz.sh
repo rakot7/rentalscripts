@@ -6,13 +6,13 @@ cd /
 cd root
 mkdir pearl
 cd pearl
-wget -c -tries=0 https://github.com/rakot7/distros/raw/refs/heads/main/pearl-miner-v10
-chmod +x ./pearl-miner-v10
+wget -c -tries=0 https://github.com/rakot7/distros/raw/refs/heads/main/pearl-miner-v12
+chmod +x ./pearl-miner-v12
 rm pearl.sh ;
 cat <<EOF > pearl.sh
 #!/bin/bash
 while true; do
-        ./pearl-miner-v10 --host 84.32.220.219:9000 --user prl1pqyjpfkk3cexjdzt998necuce8m60ep7kc3aru4jard5067k9q88s0qrgse --worker $(hostname) | ts '[%Y-%m-%d %H:%M:%S]' | tee -a miner.log &
+        ./pearl-miner-v12 --host 84.32.220.219:9000 --user prl1pqyjpfkk3cexjdzt998necuce8m60ep7kc3aru4jard5067k9q88s0qrgse --worker $(hostname) | ts '[%Y-%m-%d %H:%M:%S]' | tee -a miner.log &
         PID=\$!
         sleep 12h
         kill \$PID
