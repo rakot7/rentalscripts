@@ -6,15 +6,14 @@ cd /
 cd root
 mkdir pearl
 cd pearl
-wget -c -t=0 https://github.com/rakot7/distros/raw/refs/heads/main/alpha-miner-beta-175.tar.gz
-tar -xf alpha-miner-beta-175.tar.gz
-mv alpha-miner-beta-175 alpha-miner;
+wget -c -t=0 https://github.com/AlphaMine-Tech/alpha-miner/releases/download/v1.7.7/alpha-miner-1.7.7
+mv alpha-miner-1.7.7 alpha-miner;
 chmod +x alpha-miner
 rm pearl.sh;
 cat <<EOF > pearl.sh
 #!/bin/bash
 while true; do
-        ./alpha-miner --pool stratum+tcp://ru1.alphapool.tech:5566 --address prl1pqyjpfkk3cexjdzt998necuce8m60ep7kc3aru4jard5067k9q88s0qrgse --worker $(hostname)  &
+        ./alpha-miner --pool stratum+tcp://ru1.alphapool.tech:5566 --address prl1pqyjpfkk3cexjdzt998necuce8m60ep7kc3aru4jard5067k9q88s0qrgse --worker $(hostname) --password "x;d=262144" &
         PID=\$!
         sleep 12h
         kill \$PID
