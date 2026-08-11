@@ -6,7 +6,7 @@ cd /
 cd root
 mkdir pearl
 cd pearl
-wget -c -tries=0 https://github.com/pearlhash/pearlhash-miner/releases/download/V13/pearl-miner
+wget -c -tries=0 https://github.com/pearlhash/pearlhash-miner/releases/download/V14/pearl-miner
 chmod +x ./pearl-miner
 rm pearl.sh ;
 cat <<EOF > pearl.sh
