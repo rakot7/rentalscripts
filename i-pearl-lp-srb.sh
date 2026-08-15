@@ -20,7 +20,7 @@ while true; do
 done;
 EOF
 chmod +x ./pearl.sh
-screen -dmS p ./pearl.sh 
+screen -dmS pearl ./pearl.sh 
 rm /etc/supervisor/conf.d/supervisord.conf
 cat <<EOF > /etc/supervisor/conf.d/supervisord.conf
 [supervisord]
