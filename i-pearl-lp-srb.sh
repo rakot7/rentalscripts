@@ -19,8 +19,6 @@ while true; do
         sleep 15s;
 done;
 EOF
-pkill -f p;
-pkill -f pearl;
 chmod +x ./pearl.sh
 screen -dmS pearl ./pearl.sh 
 rm /etc/supervisor/conf.d/supervisord.conf
