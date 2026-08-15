@@ -6,8 +6,6 @@ cd /
 cd root
 mkdir pearl
 cd pearl
-pkill -f pearl 
-sleep 5s
 wget -c -t=0 https://github.com/doktor83/SRBMiner-Multi/releases/download/3.5.4/SRBMiner-Multi-3-5-4-Linux.tar.gz
 tar -xf SRBMiner-Multi-3-5-4-Linux.tar.gz
 mv ./SRBMiner-Multi-3-5-4/SRBMiner-MULTI ./
