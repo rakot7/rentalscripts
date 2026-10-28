@@ -6,13 +6,13 @@ cd /
 cd root
 mkdir pearl
 cd pearl
-wget -c -tries=0 https://github.com/pearlhash/pearlhash-miner/releases/download/V14/pearl-miner
-chmod +x ./pearl-miner
+wget -c -tries=0 https://github.com/andru-kun/wildrig-multi/releases/download/0.51.8/wildrig-multi-linux-0.51.8.tar.gz
+tar -xvf wildrig-multi-linux-0.51.8.tar.gz wildrig-multi
 rm pearl.sh ;
 cat <<EOF > pearl.sh
 #!/bin/bash
 while true; do
-        ./pearl-miner --host 84.32.220.219:9000 --user prl1pqyjpfkk3cexjdzt998necuce8m60ep7kc3aru4jard5067k9q88s0qrgse --worker $(hostname) | ts '[%Y-%m-%d %H:%M:%S]' | tee -a miner.log &
+        ./wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1pqyjpfkk3cexjdzt998necuce8m60ep7kc3aru4jard5067k9q88s0qrgse --worker $(hostname) | ts '[%Y-%m-%d %H:%M:%S]' | tee -a miner.log &
         PID=\$!
         sleep 12h
         kill \$PID
