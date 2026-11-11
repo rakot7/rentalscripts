@@ -6,8 +6,8 @@ cd /
 cd root
 mkdir pearl
 cd pearl
-wget -c -tries=0 https://github.com/andru-kun/wildrig-multi/releases/download/0.51.8/wildrig-multi-linux-0.51.8.tar.gz
-tar -xvf wildrig-multi-linux-0.51.8.tar.gz wildrig-multi
+wget -c -tries=0 https://github.com/andru-kun/wildrig-multi/releases/download/0.52.1/wildrig-multi-linux-0.52.1.tar.gz
+tar -xvf wildrig-multi-linux-0.52.1.tar.gz
 rm pearl.sh ;
 cat <<EOF > pearl.sh
 #!/bin/bash
